@@ -9,7 +9,7 @@
     ]
   },
   "publicPath": "/app/themes/SageTheme",
-  "devUrl": "http://SageTheme.test",
+  "devUrl": "http://localhost/wordpress",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

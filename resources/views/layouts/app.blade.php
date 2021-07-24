@@ -9,7 +9,7 @@
         <main class="main">
           @yield('content')
         </main>
-        @if (App\display_sidebar())
+        @if (App\display_sidebar() || true)
           <aside class="sidebar">
             @include('partials.sidebar')
           </aside>
