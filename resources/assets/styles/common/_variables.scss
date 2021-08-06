@@ -2,7 +2,11 @@
 @import "~bootstrap/scss/functions";
 
 $theme-colors: (
-  primary: #525ddc
+  primary: #525ddc,
+  secondary: #1e195a,
+  blue-light: #96c8ff,
+  light: #fafafa,
+  dark: #0d0c25
 );
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */
