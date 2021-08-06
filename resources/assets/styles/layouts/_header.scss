@@ -14,7 +14,7 @@
   position: fixed;
   width: 100%;
   background: transparent;
-  z-index: 99999999;
+  z-index: 999;
 
   &.sticky {
     background-color: #fff;
@@ -54,11 +54,9 @@
 @media (min-width: 992px) {
   #desktop-header {
     display: block;
-
     background: transparent;
-    
-    width: 100%;
-    z-index: 9999999999;
+    width: 100%;  
+    z-index: 999;
 
     a {
       font-family: Cabin !important;
