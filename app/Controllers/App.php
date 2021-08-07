@@ -30,4 +30,24 @@ class App extends Controller
         }
         return get_the_title();
     }
+
+    public static function getPostByCategory( $nbProjects)
+    {
+        
+        // choose $nbProjects projects from portfolio
+        $args =  array(
+            'category_name' =>  $nbProjects,
+            'posts_per_page' => 3,
+        );
+        $projects = new \Wp_Query($args);
+        
+        if ($projects->have_posts()) {
+            // get the total of projet
+            // $totalNbProjects = wp_count_posts( 'portfolio' )->publish;
+            return $projects;
+        } else {
+            return "no project";
+        }
+
+    }
 }
