@@ -22,3 +22,19 @@ const routes = new Router({
 
 // Load Events
 jQuery(document).ready(() => routes.loadEvents());
+
+jQuery(window).scroll(function() {    
+  var scroll = jQuery(window).scrollTop();
+
+  if (scroll >= 100) {
+      jQuery('#header').addClass('sticky');
+  } else {
+      jQuery('#desktop-header').removeClass('sticky');
+  }
+
+  if (scroll >= 30) {
+      jQuery('#header').addClass('sticky');
+  } else {
+      jQuery('#header').removeClass('sticky');
+  }
+});
