@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Noto+Serif+TC:wght@300&display=swap');
+// header
+@mixin flex{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+// Text
+@mixin text($fontsz,$fontW,$lheight){
+    font-family: Lato !important;
+    font-size: $fontsz;
+    line-height: $lheight;
+    font-weight:$fontW;
+}
+@mixin category($fontsize,$fontWhgt,$lineheight){
+    font-family: Lato !important;
+    font-size: $fontsize;
+    line-height: $lineheight;
+    font-weight:$fontWhgt;
+    text-transform: uppercase;
+}
+@mixin excerpt($fontsz,$fontW,$lheight){
+    font-family: Roboto Slab !important;
+    font-size: $fontsz;
+    line-height: $lheight;
+    font-weight:$fontW;
+}
+// banner
+@mixin banner{
+    background-size: contain;
+    background-image: url('/wp-content/themes/StarterSage-Theme/resources/assets/images/hero-bg.jpg'); 
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height:600px;
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.5); 
+}
+// quick read
+@mixin absolute{
+    position: absolute;
+    left: 28px;
+    right: 0;
+    width: 90%;
+    top: auto;
+}
+@mixin content-ab{
+    position: absolute;
+    z-index: 0;
+    width: 155px;
+    height: 40px;
+    top: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+@mixin title-ab{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+@mixin avatar{
+    width: 30px;
+    height: 30px;
+    margin-right: 6px;
+    border-radius: 50%;
+}
+@mixin share-before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+@mixin handle{
+    position: relative;
+    display: inline-block;
+    margin: 0 3px 7px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: middle;
+}
+@mixin handle-after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+@mixin icon{
+    display: inline-block;
+    position: relative;
+    padding-left: 13px;
+    padding-right: 13px;
+    line-height: 40px;
+    z-index: 1;
+}
+@mixin social-text{
+    font-weight: 700;
+    margin-left: -6px;
+    padding-left: 12px;
+    padding-right: 17px;
+    line-height: 40px;
+}
+@mixin network-rela{
+    position: relative;
+    display: inline-block;
+    margin: 0 3px 7px;
+    padding:15px;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: middle;
+}
+@mixin text-before{
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 1px;
+    height: 16px;
+    background-color: #fff;
+    opacity: 0.2;
+    z-index: 1;
+}
+@mixin blockquote{
+    padding: 0;
+    position: relative;
+    border-left: none;
+    margin: 40px 5% 38px;
+    font-style: italic;
+    text-align: center;
+}
+@mixin author-name{
+    text-decoration: none;
+    display: block;
+    color: #000000;
+    margin: 5px 0 10px 0;
+    font-family: Lato !important;
+    font-size: 19px;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+@mixin filter{
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    margin: auto 0;
+    z-index: 2;
+    line-height: 30px;
+    text-align: right;
+}
+@mixin info-absolute{
+    position: absolute;
+    left: 28px;
+    right: 0;
+    width: 90%;
+    color: #fff;
+    top: auto;
+    bottom: 40px;
+    margin: 0 0 -10px 10px;
+    padding: 0 50px 20px 20px;
+    background-color: rgba(0,0,0,0.6);
+}
+@mixin facebook{
+    text-align: center;
+    width: 33.3333%;
+    margin: 0;
+    float: left;
+    height:100px;
+    background-color:#516eab;
+}
+@mixin twiter{
+    text-align: center;
+    width: 33.3333%;
+    margin: 0;
+    float: left;
+    height:100px;
+    background-color:#29c5f6;
+}
+@mixin youtube{
+    text-align: center;
+    width: 33.3333%;
+    margin: 0;
+    float: left;
+    height:100px;
+    background-color:#e14e42;
+}
+@mixin couner{
+    font-family: Montserrat !important;
+    font-size: 14px ;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+}
+@mixin social-name{
+    font-family: Noto Serif TC !important;
+    font-size: 13px;
+    display: block;
+    width: 100%;
+}
+@mixin sticky{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+}
+// slider
+@mixin slider-left{
+    position: absolute;
+    width: 0;
+    height: 0;
+    right:45px;
+    top: 15px;
+	background-color: rgba(0,0,0,.8);
+    min-width: 29px;
+    min-height: 29px;
+    line-height: 30px;
+    font-size: 10px;
+    color: #fdfdfd;
+    border: 0;
+}
+@mixin slider-right{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 15px;
+   left:500px;
+	background-color: rgba(0,0,0,.8);
+    min-width: 29px;
+    min-height: 29px;
+    line-height: 30px;
+    font-size: 10px;
+    color: #fdfdfd;
+    border: 0;
+}
