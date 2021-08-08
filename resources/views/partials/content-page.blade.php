@@ -1,7 +1,4 @@
-{{-- @php the_content() @endphp
-{!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!} --}}
-
-<section class="slider">
+<section class="slider" style="background-image: url('@asset('images/hero-bg.jpg')'); ">
   <div class="container">
     <div class="row">
       <div class="col-md-5">
@@ -34,8 +31,8 @@
       <div class="col-3 md-3">
         <div class="total__country">
           <div class="total__country-name"></div>
-          <div class="total__country-count">
-            191,230,672
+          <div class="total__country-count" id="total">
+            191,225,672
           </div>
           <div class="total__country-start">
             Confirmed cases
@@ -45,7 +42,7 @@
       <div class="col-3 md-3">
         <div class="total__country">
           <div class="total__country-name"></div>
-          <div class="total__country-count">
+          <div class="total__country-count" id="death">
             4,105,847
           </div>
           <div class="total__country-start">
@@ -56,7 +53,7 @@
       <div class="col-3 md-3">
         <div class="total__country">
           <div class="total__country-name"></div>
-          <div class="total__country-count">
+          <div class="total__country-count" id="recover">
             172,462,518
           </div>
           <div class="total__country-start">
@@ -67,7 +64,7 @@
       <div class="col-3 md-3">
         <div class="total__wrapper">
           <div class="total__country-name"></div>
-          <div class="total__country-count">
+          <div class="total__country-count" id="active">
             14,662,307
           </div>
           <div class="total__country-start">
@@ -81,119 +78,31 @@
 <section class="news">
   <div class="container">
     <div class="row">
-      @php $projects = App::getPostByCategory('ho-tro'); @endphp
+      @php $projects = App::getPostByCategory('vaccine',5); @endphp
       @if($projects)
-        @foreach($projects->get_posts() as $project) 
+        @foreach($projects->get_posts() as $project)  
           @php $loop->iteration; @endphp
           @if ($loop->iteration == 1)
             @include('post.p-40')
-          <div class="col-md-2">
+          <div class="col-md-4">
+            <div class="row">
           @else
             @include('post.p-20')
-          </div>
+         
           @endif
+
         @endforeach
+            </div>
+          </div>
       @endif
-      
-      <div class="col-md-2">
-        <!-- blog 1 -->
-        <div class="news__paper">
-          <a href="#" class="news__category">Behavior</a>
-          <div class="news__paper-thumbai">
-            <a href="#" rel="bookmark" title="The Coronavirus Exposes Massive Education Digital Generation Gap">
-              <span class="entry-thumb" data-bg="">
-                <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/29-696x464.jpg" alt="">
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="news__info">
-          <h3 class="news__info-smtile">
-            <a href="#" rel="bookmark" title="The Coronavirus Exposes Massive Education Digital Generation Gap">
-              The Coronavirus Exposes Massive Education Digital Generation Gap
-            </a>
-          </h3>
-        </div>
-        <!-- blog 2 -->
-        <div class="news__paper">
-          <a href="#" class="news__category">Behavior</a>
-          <div class="news__paper-thumbai">
-            <a href="#" rel="bookmark" title="The Coronavirus Exposes Massive Education Digital Generation Gap">
-              <span class="entry-thumb" data-bg="">
-                <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/29-696x464.jpg" alt="">
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="news__info">
-          <h3 class="news__info-smtile">
-            <a href="#" rel="bookmark" title="The Coronavirus Exposes Massive Education Digital Generation Gap">
-              The Coronavirus Exposes Massive Education Digital Generation Gap
-            </a>
-          </h3>
-        </div>
-      </div>
       <div class="col-md-3">
-        <!-- post 1 -->
-        <div class="media news__category-pos">
-          <div class="media-body">
-            <h3 class="news__aside">
-              <a href="#" title="" rel="bookmark">
-                Clinical Research Fails to Provide a Complete COVID19 Pattern
-              </a>
-            </h3>
-          </div>
-          <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" class="ml-1 news__img"
-            alt="Generic placeholder image">
-        </div>
-        <!-- post 2 -->
-        <div class="media news__category-pos">
-          <div class="media-body">
-            <h3 class="news__aside">
-              <a href="#" title="" rel="bookmark">
-                Clinical Research Fails to Provide a Complete COVID19 Pattern
-              </a>
-            </h3>
-          </div>
-          <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" class="ml-1 news__img"
-            alt="Generic placeholder image">
-        </div>
-        <!-- post 3 -->
-        <div class="media news__category-pos">
-          <div class="media-body">
-            <h3 class="news__aside">
-              <a href="#" title="" rel="bookmark">
-                Clinical Research Fails to Provide a Complete COVID19 Pattern
-              </a>
-            </h3>
-          </div>
-          <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" class="ml-1 news__img"
-            alt="Generic placeholder image">
-        </div>
-        <!-- post 4 -->
-        <div class="media news__category-pos">
-          <div class="media-body">
-            <h3 class="news__aside">
-              <a href="#" title="" rel="bookmark">
-                Clinical Research Fails to Provide a Complete COVID19 Pattern
-              </a>
-            </h3>
-          </div>
-          <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" class="ml-1 news__img"
-            alt="Generic placeholder image">
-        </div>
-        <!-- post 5 -->
-        <div class="media news__category-pos">
-          <div class="media-body">
-            <h3 class="news__aside">
-              <a href="#" title="" rel="bookmark">
-                Clinical Research Fails to Provide a Complete COVID19 Pattern
-              </a>
-            </h3>
-          </div>
-          <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" class="ml-1 news__img"
-            alt="Generic placeholder image">
-        </div>
+        @php $projects = App::getPostByCategory('nghien-cuu',5); @endphp
+        @if($projects)
+          @foreach($projects->get_posts() as $project)      
+          @include('post.p-sidebar')
+          @endforeach
+        @endif
+          
       </div>
     </div>
   </div>
@@ -206,108 +115,16 @@
       </span>
     </h4>
     <div class="row">
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
-        <div class="quick-read__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/57.jpg" alt="G">
-          </a>
-        </div>
-        <div class="quick-read__info">
-          <a href="#">Research</a>
-          <h3 class="quick-read__title">
-            <a href="#" rel="bookmark" title="">
-              Anxiety Research: Your Nose Itches: Allergies, Flu or COVID19?
-            </a>
-          </h3>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
-        <div class="quick-read__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/57.jpg" alt="G">
-          </a>
-        </div>
-        <div class="quick-read__info">
-          <a href="#">Research</a>
-          <h3 class="quick-read__title">
-            <a href="#" rel="bookmark" title="">
-              Anxiety Research: Your Nose Itches: Allergies, Flu or COVID19?
-            </a>
-          </h3>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
-        <div class="quick-read__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/57.jpg" alt="G">
-          </a>
-        </div>
-        <div class="quick-read__info">
-          <a href="#">Research</a>
-          <h3 class="quick-read__title">
-            <a href="#" rel="bookmark" title="">
-              Anxiety Research: Your Nose Itches: Allergies, Flu or COVID19?
-            </a>
-          </h3>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
-        <div class="quick-read__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/57.jpg" alt="G">
-          </a>
-        </div>
-        <div class="quick-read__info">
-          <a href="#">Research</a>
-          <h3 class="quick-read__title">
-            <a href="#" rel="bookmark" title="">
-              Anxiety Research: Your Nose Itches: Allergies, Flu or COVID19?
-            </a>
-          </h3>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
-        <div class="quick-read__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/57.jpg" alt="G">
-          </a>
-        </div>
-        <div class="quick-read__info">
-          <a href="#">Research</a>
-          <h3 class="quick-read__title">
-            <a href="#" rel="bookmark" title="">
-              Anxiety Research: Your Nose Itches: Allergies, Flu or COVID19?
-            </a>
-          </h3>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-5">
-        <div class="quick-read__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/57.jpg" alt="G">
-          </a>
-        </div>
-        <div class="quick-read__info">
-          <a href="#">Research</a>
-          <h3 class="quick-read__title">
-            <a href="#" rel="bookmark" title="">
-              Anxiety Research: Your Nose Itches: Allergies, Flu or COVID19?
-            </a>
-          </h3>
-        </div>
-      </div>
+      @php $projects = App::getPostByCategory('viet-nam',6); @endphp
+        @if($projects)
+          @foreach($projects->get_posts() as $project)      
+          @include('post.p-30')
+          @endforeach
+        @endif
     </div>
   </div>
 </section>
-<section class="prevention">
+{{-- <section class="prevention">
   <div class="container">
     <h3 class="tdm-title tdm-title-sm">Prevention Strategy</h3>
     <div class="row">
@@ -317,7 +134,7 @@
             alt="G">
         </a>
       </div>
-      {{-- <div class="col-md-6">
+      <div class="col-md-6">
           <div id="carousel-Controls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -363,7 +180,7 @@
               <span class="visually-hidden"></span>
             </button>
           </div>
-        </div> --}}
+        </div>
       <div class="col-md-3">
         <div class="prevention__thumb">
           <a href="#" rel="bookmark" title="">
@@ -402,7 +219,7 @@
           </h3>
         </div>
       </div>
-      {{-- <div class="col-md-6">
+      <div class="col-md-6">
           <div id="carousel-ls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -448,11 +265,11 @@
               <span class="visually-hidden"></span>
             </button>
           </div>
-        </div> --}}
+        </div>
     </div>
   </div>
-</section>
-<section class="global">
+</section> --}}
+{{-- <section class="global">
   <div class="container">
     <h3 class="tdm-title tdm-title-sm">Global Impact</h3>
     <div class="row">
@@ -473,7 +290,7 @@
           </h3>
         </div>
       </div>
-      {{-- <div class="col-md-6">
+      <div class="col-md-6">
           <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -519,7 +336,7 @@
               <span class="visually-hidden"></span>
             </button>
           </div>
-        </div> --}}
+        </div>
       <div class="col-md-3">
         <a href="#" class="prevention__img">
           <img class="prevention__img" src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/recl2.jpg"
@@ -528,7 +345,7 @@
       </div>
     </div>
     <div class="row">
-      {{-- <div class="col-md-6">
+      <div class="col-md-6">
           <div id="carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -574,7 +391,7 @@
               <span class="visually-hidden"></span>
             </button>
           </div>
-        </div> --}}
+        </div>
       <div class="col-md-3">
         <div class="prevention__thumb">
           <a href="#" rel="bookmark" title="">
@@ -596,7 +413,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 <section class="video">
   <div class="container-fluid">
     <h4 class="td-block-title">
@@ -607,16 +424,16 @@
     <div class="row">
       <div class="col-12">
         <div class="fotorama">
-          <a href="https://www.youtube.com/watch?v=8RWT0YY5zRc" data-img="desert-rose.jpg">
-            <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/maxresdefault.webp" alt=""
+          <a href="https://www.youtube.com/watch?v=QbVfZT9-D5o" data-img="desert-rose.jpg">
+            <img src="@asset('images/hero-bg.jpg')" alt=""
               title="">
           </a>
-          <a href="https://www.youtube.com/watch?v=8RWT0YY5zRc" data-img="desert-rose.jpg">
-            <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/maxresdefault.webp" alt=""
+          <a href="https://www.youtube.com/watch?v=kSybM5pLcH8" data-img="desert-rose.jpg">
+            <img src="@asset('images/hero-bg.jpg')" alt=""
               title="">
           </a>
-          <a href="https://www.youtube.com/watch?v=8RWT0YY5zRc" data-img="desert-rose.jpg">
-            <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/maxresdefault.webp" alt=""
+          <a href="https://www.youtube.com/watch?v=EDTdm7bR2Z0" data-img="desert-rose.jpg">
+            <img src="@asset('images/hero-bg.jpg')" alt=""
               title="">
           </a>
         </div>
@@ -628,100 +445,14 @@
   <div class="container">
     <h3 class="tdm-title tdm-title-sm">Latest Articles</h3>
     <div class="row">
-      <div class="col-md-3">
-        <div class="articles__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/57.jpg" alt="" title="">
-            </span>
-          </a>
-        </div>
-        <div class="articles__info">
-          <a href="#">Research</a>
-          <h3 class="articles__title">
-            <a href="#" rel="bookmark" title="">
-              Clinical Research Fails to Provide a Complete COVID19 Pattern
-            </a>
-          </h3>
-        </div>
-        <div class="articles__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/57.jpg" alt="" title="">
-            </span>
-          </a>
-        </div>
-        <div class="articles__info">
-          <a href="#">Research</a>
-          <h3 class="articles__title">
-            <a href="#" rel="bookmark" title="">
-              Clinical Research Fails to Provide a Complete COVID19 Pattern
-            </a>
-          </h3>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="articles__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/57.jpg" alt="" title="">
-            </span>
-          </a>
-        </div>
-        <div class="articles__info">
-          <a href="#">Research</a>
-          <h3 class="articles__title">
-            <a href="#" rel="bookmark" title="">
-              Clinical Research Fails to Provide a Complete COVID19 Pattern
-            </a>
-          </h3>
-        </div>
-        <div class="articles__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/57.jpg" alt="" title="">
-            </span>
-          </a>
-        </div>
-        <div class="articles__info">
-          <a href="#">Research</a>
-          <h3 class="articles__title">
-            <a href="#" rel="bookmark" title="">
-              Clinical Research Fails to Provide a Complete COVID19 Pattern
-            </a>
-          </h3>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="articles__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/57.jpg" alt="" title="">
-            </span>
-          </a>
-        </div>
-        <div class="articles__info">
-          <a href="#">Research</a>
-          <h3 class="articles__title">
-            <a href="#" rel="bookmark" title="">
-              Clinical Research Fails to Provide a Complete COVID19 Pattern
-            </a>
-          </h3>
-        </div>
-        <div class="articles__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/57.jpg" alt="" title="">
-            </span>
-          </a>
-        </div>
-        <div class="articles__info">
-          <a href="#">Research</a>
-          <h3 class="articles__title">
-            <a href="#" rel="bookmark" title="">
-              Clinical Research Fails to Provide a Complete COVID19 Pattern
-            </a>
-          </h3>
+      <div class="col-md-9">
+        <div class="row">
+          @php $projects = App::getPostByCategory('',6); @endphp
+          @if($projects)
+            @foreach($projects->get_posts() as $project)      
+            @include('post.p-25')
+            @endforeach
+          @endif
         </div>
       </div>
       <div class="col-md-3">

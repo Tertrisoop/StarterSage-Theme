@@ -38,3 +38,24 @@ jQuery(window).scroll(function() {
       jQuery('#header').removeClass('sticky');
   }
 });
+
+jQuery(window).scroll(function() {
+
+const url = 'https://corona.lmao.ninja/v2/all';
+const analyze_comments = (url) => {
+  fetch(url)
+    .then((response) => response.json())
+    .then((results) => {
+      if (results) {
+       jQuery('#total').html(new Intl.NumberFormat().format(results.cases));
+       jQuery('#death').html(new Intl.NumberFormat().format(results.deaths));
+       jQuery('#recover').html(new Intl.NumberFormat().format(results.recovered));
+       jQuery('#active').html(new Intl.NumberFormat().format(results.active));
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+analyze_comments(url);
+});
