@@ -2,7 +2,7 @@
 	<section id="mobile-header">
 		<nav class="navbar mobile-navbar">
 			<a class="mobile-navbar-brand" href="{{ home_url('/') }}">
-				<img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/7hostvn/logo.svg" alt="7Host Việt Nam">
+				<img src="@asset('images/logo.jpg')" alt="Logo">
 				
 
 			</a>
@@ -26,9 +26,8 @@
 		<nav id="desktop-navbar-main" class="navbar navbar-expand">
 			<div class="container">
 				<a class="navbar-brand" href="{{ home_url('/') }}">
-					<img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/logo.jpg" alt="7Host Việt Nam">
-					<p>{{ get_bloginfo('name', 'display') }}
-						{{ get_bloginfo('name', 'display') }}</p>
+					<img src="@asset('images/logo.jpg')" alt="Logo">
+					{{ get_bloginfo('name', 'display') }}
 				</a>
 				@if (has_nav_menu('primary_navigation'))
 					@php
@@ -49,13 +48,8 @@
 		<nav id="desktop-navbar-bottom" class="navbar navbar-expand">
 			<div class="container">
 				<a class="navbar-brand" href="{{ home_url('/') }}">
-					<img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/logo.jpg" alt="7Host Việt Nam">
-					<span>
-						{{ get_bloginfo('name', 'display') }}
-					</span><br>
-					<span>
-						{{ get_bloginfo('name', 'display') }}
-					</span>				
+					<img src="@asset('images/logo.jpg')" alt="Logo">					
+						{{ get_bloginfo('name', 'display') }}			
 				</a>
 				@if (has_nav_menu('primary_navigation'))
 					@php
