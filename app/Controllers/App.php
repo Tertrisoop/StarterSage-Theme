@@ -46,10 +46,12 @@ class App extends Controller
         $args =  array(
             'category_name' =>  $nbProjects,
             'posts_per_page' => $amout,
+
         );
         $projects = new \Wp_Query($args);
         
         if ($projects->have_posts()) {
+
             return $projects;
         } else {
             return "no project";

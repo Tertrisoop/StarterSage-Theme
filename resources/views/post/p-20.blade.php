@@ -1,5 +1,4 @@
 
-
 <div class="col-md-6">
   <div class="news__paper">
     <a href="#" class="news__category">Behavior</a>
@@ -18,4 +17,5 @@
       </a>
     </h3>
   </div>
+
 </div>
