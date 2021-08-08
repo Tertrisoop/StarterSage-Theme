@@ -21,7 +21,7 @@
         </span>
       </div>
       <div class="news__info-excerpt">
-        {!! substr( $project->content,0,160 )!!}...
+        {!! substr( $project->post_content,0,160 ) !!}...
       </div>
     </div>
   </div>

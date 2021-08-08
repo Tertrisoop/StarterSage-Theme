@@ -31,19 +31,25 @@ class App extends Controller
         return get_the_title();
     }
 
-    public static function getPostByCategory( $nbProjects)
+    // public function saveApiData()
+    // {
+    //     $client = new Client();
+    //     $res = $client->request('POST', 'https://url_to_the_api');
+
+    //     $result= $res->getBody();
+    //     dd($result);
+
+
+    // }
+    public static function getPostByCategory( $nbProjects,$amout)
     {
-        
-        // choose $nbProjects projects from portfolio
         $args =  array(
             'category_name' =>  $nbProjects,
-            'posts_per_page' => 3,
+            'posts_per_page' => $amout,
         );
         $projects = new \Wp_Query($args);
         
         if ($projects->have_posts()) {
-            // get the total of projet
-            // $totalNbProjects = wp_count_posts( 'portfolio' )->publish;
             return $projects;
         } else {
             return "no project";
