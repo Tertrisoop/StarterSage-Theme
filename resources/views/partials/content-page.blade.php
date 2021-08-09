@@ -78,9 +78,9 @@
 <section class="news">
   <div class="container">
     <div class="row">
-      @php $projects = App::getPostByCategory('vaccine',5); @endphp
-      @if($projects)
-        @foreach($projects->get_posts() as $project)  
+      @php $post = App::getPostByCategory('vaccine',5);  @endphp
+      @if($post)
+        @foreach($post->get_posts() as $post)  
           @php $loop->iteration; @endphp
           @if ($loop->iteration == 1)
             @include('post.p-40')
@@ -96,9 +96,11 @@
           </div>
       @endif
       <div class="col-md-3">
-        @php $projects = App::getPostByCategory('nghien-cuu',5); @endphp
-        @if($projects)
-          @foreach($projects->get_posts() as $project)      
+        @php $post = App::getPostByCategory('nghien-cuu',5); @endphp
+        @if($post)
+          @foreach($post->get_posts() as $post)  @php
+              $cat = get_the_category($post->ID);
+          @endphp    
           @include('post.p-sidebar')
           @endforeach
         @endif
@@ -115,9 +117,9 @@
       </span>
     </h4>
     <div class="row">
-      @php $projects = App::getPostByCategory('viet-nam',6); @endphp
-        @if($projects)
-          @foreach($projects->get_posts() as $project)      
+      @php $post = App::getPostByCategory('viet-nam',6); @endphp
+        @if($post)
+          @foreach($post->get_posts() as $post)    
           @include('post.p-30')
           @endforeach
         @endif
@@ -447,9 +449,9 @@
     <div class="row">
       <div class="col-md-9">
         <div class="row">
-          @php $projects = App::getPostByCategory('',6); @endphp
-          @if($projects)
-            @foreach($projects->get_posts() as $project)      
+          @php $post = App::getPostByCategory('',6); @endphp
+          @if($post)
+            @foreach($post->get_posts() as $post)    
             @include('post.p-25')
             @endforeach
           @endif
