@@ -1,4 +1,3 @@
-<button>123</button>
 
 <form role="search" method="get" class="search-form" action="{{ esc_url( home_url( '/' ) ) }}">
     <label>
