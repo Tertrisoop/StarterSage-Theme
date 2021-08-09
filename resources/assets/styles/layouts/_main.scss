@@ -7,6 +7,9 @@
 .banner__news{
     padding-top: 200px;
 }
+.banner-ad{
+    padding-top: 1rem;
+}
 .ban{
     .ban__info{
         &-category{
@@ -73,7 +76,7 @@
 }
 // news
 .news{
-    padding:3rem 0;
+    padding:2rem 0;
     max-height: 100%;
     &__paper{
         position: relative;
