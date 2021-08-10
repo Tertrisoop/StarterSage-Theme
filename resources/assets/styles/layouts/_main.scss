@@ -1,5 +1,5 @@
-@import "./mixins";
-@import "./variables";
+// @import "./mixins";
+// @import "./variables";
 // banner
 .slider{
     @include banner;
@@ -92,9 +92,6 @@
         @include category(14px,700,1);
     }
     &__paper{
-        &-thumb{
-            // padding-bottom: 60%;
-        }
         img{
             width:100%;
             height:270px;

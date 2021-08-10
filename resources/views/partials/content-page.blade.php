@@ -78,7 +78,7 @@
 <section class="news">
   <div class="container">
     <div class="row">
-      @php $post = App::getPostByCategory('vaccine',5);  @endphp
+      @php $post = App::getPostByCategory('2,5',5);  @endphp
       @if($post)
         @foreach($post->get_posts() as $post)  
           @php $loop->iteration; @endphp
@@ -96,7 +96,7 @@
           </div>
       @endif
       <div class="col-md-3">
-        @php $post = App::getPostByCategory('nghien-cuu',5); @endphp
+        @php $post = App::getPostByCategory('6',5); @endphp
         @if($post)
           @foreach($post->get_posts() as $post)  @php
               $cat = get_the_category($post->ID);
@@ -117,7 +117,7 @@
       </span>
     </h4>
     <div class="row">
-      @php $post = App::getPostByCategory('viet-nam',6); @endphp
+      @php $post = App::getPostByCategory('3',6); @endphp
         @if($post)
           @foreach($post->get_posts() as $post)    
           @include('post.p-30')

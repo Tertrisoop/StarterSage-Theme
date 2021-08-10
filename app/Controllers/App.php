@@ -31,20 +31,10 @@ class App extends Controller
         return get_the_title();
     }
 
-    // public function saveApiData()
-    // {
-    //     $client = new Client();
-    //     $res = $client->request('POST', 'https://url_to_the_api');
-
-    //     $result= $res->getBody();
-    //     dd($result);
-
-
-    // }
     public static function getPostByCategory( $nbProjects,$amout)
     {
         $args =  array(
-            'category_name' =>  $nbProjects,
+            'cat' =>  $nbProjects,
             'posts_per_page' => $amout,
 
         );
@@ -54,7 +44,7 @@ class App extends Controller
 
             return $projects;
         } else {
-            return "no project";
+            return null;
         }
 
     }
