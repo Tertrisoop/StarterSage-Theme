@@ -187,23 +187,19 @@
 .asider{
     &__socical{
         &-facebook{
-            @include facebook;
-        }
-        &-twitter{
-            @include twiter;
+            @include icon-box-social;
+            background-color:#516eab;
         }
         &-youtube{
-            @include youtube;
+            @include icon-box-social;
+            background-color:#e14e42;
         }
         &-icon{
             i{
+                font-size: 35px;
                 margin-top:15px;
                 color:$Wcolor;
             }
-        }
-        &-couner{
-            color:$Wcolor;
-            @include couner;
         }
         &-name{
             color:$Wcolor;
@@ -235,6 +231,7 @@
         }
     }
     &__aside{
+        padding-top: 5px;
         margin:0;
         @include text(14px,700,1.2);
         >a{

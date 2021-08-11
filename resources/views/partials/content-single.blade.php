@@ -114,91 +114,28 @@
             </div>
         </div>
                 <div class="col-xl-3 col-sm-1">
-                    <div class="asider__socical">
+                    {{-- <div class="asider__socical">
                         <div class="asider__socical-title">
                             <h3>Bình Luận</h3>
                         </div>
                         <div class="asider__socical-facebook">
                             <a href="#" target="_blank" rel="noopener">
-                            <div class="asider__socical-icon">
-                                <i class="fab fa-facebook-f"></i>
-                            </div>
-                            <span class="asider__socical-couner">22,041</span>
-                            <span class="asider__socical-name">Fans</span>
-                        </a>
-                        </div>
-                        <div class="asider__socical-twiter">
-                            <a href="#" target="_blank" rel="noopener">
-                            <div class="asider__socical-icon">
-                                <i class="fab fa-twitter"></i>
-                            </div>
-                            <span class="asider__socical-couner">22,041</span>
-                            <span class="asider__socical-name">Fans</span>
-                        </a>
+                              <div class="asider__socical-icon">
+                                  <i class="fab fa-facebook-f"></i>
+                              </div>
+                              <span class="asider__socical-name">Fans</span>
+                            </a>
                         </div>
                         <div class="asider__socical-youtube">
                             <a href="#" target="_blank" rel="noopener">
                             <div class="asider__socical-icon">
                                 <i class="fab fa-youtube"></i>
                             </div>
-                            <span class="asider__socical-couner">22,041</span>
                             <span class="asider__socical-name">Fans</span>
                         </a>
                         </div>
-                    </div>
-                    <div class="asider__late-post">
-                        <h3 class="asider__late-post-title">bài viết mới nhất</h3>
-                        <div class="media asider__category-pos">
-                            <div class="media-body">
-                              <h3 class="asider__aside">
-                                <a href="#" title="" rel="bookmark">
-                                  Clinical Research Fails to Provide a Complete COVID19 Pattern
-                                </a>
-                              </h3>
-                            </div>
-                            <img class="ml-1 asider__img" src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="">
-                        </div>
-                          <div class="media asider__category-pos">
-                            <div class="media-body">
-                              <h3 class="asider__aside">
-                                <a href="#" title="" rel="bookmark">
-                                  Clinical Research Fails to Provide a Complete COVID19 Pattern
-                                </a>
-                              </h3>
-                            </div>
-                            <img class="ml-1 asider__img" src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="">
-                          </div>
-                          <div class="media asider__category-pos">
-                            <div class="media-body">
-                              <h3 class="asider__aside">
-                                <a href="#" title="" rel="bookmark">
-                                  Clinical Research Fails to Provide a Complete COVID19 Pattern
-                                </a>
-                              </h3>
-                            </div>
-                            <img class="ml-1 asider__img" src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="">
-                          </div>
-                          <div class="media asider__category-pos">
-                            <div class="media-body">
-                              <h3 class="asider__aside">
-                                <a href="#" title="" rel="bookmark">
-                                  Clinical Research Fails to Provide a Complete COVID19 Pattern
-                                </a>
-                              </h3>
-                            </div>
-                            <img class="ml-1 asider__img" src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="">
-                          </div>
-                          <div class="media asider__category-pos">
-                            <div class="media-body">
-                              <h3 class="asider__aside">
-                                <a href="#" title="" rel="bookmark">
-                                  Clinical Research Fails to Provide a Complete COVID19 Pattern
-                                </a>
-                              </h3>
-                            </div>
-                            <img class="ml-1 asider__img" src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="">
-                          </div>
-                    </div>
+                    </div> --}}
+                    @php dynamic_sidebar('sidebar-primary') @endphp 
                 </div>
 
         </div>

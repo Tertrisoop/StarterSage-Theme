@@ -174,39 +174,19 @@
     padding: 0 50px 20px 20px;
     background-color: rgba(0,0,0,0.6);
 }
-@mixin facebook{
+@mixin icon-box-social{
     text-align: center;
     width: 33.3333%;
     margin: 0;
     float: left;
     height:100px;
-    background-color:#516eab;
+    margin-left: 10px;
 }
-@mixin twiter{
-    text-align: center;
-    width: 33.3333%;
-    margin: 0;
-    float: left;
-    height:100px;
-    background-color:#29c5f6;
-}
-@mixin youtube{
-    text-align: center;
-    width: 33.3333%;
-    margin: 0;
-    float: left;
-    height:100px;
-    background-color:#e14e42;
-}
-@mixin couner{
-    font-family: Montserrat !important;
-    font-size: 14px ;
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-}
+
+
 @mixin social-name{
     font-family: Noto Serif TC !important;
+    padding-top: 15px;
     font-size: 13px;
     display: block;
     width: 100%;
