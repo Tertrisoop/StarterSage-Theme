@@ -1,7 +1,4 @@
-@import "./mixins";
-@import "./variables";
 
-// title category
 .tdb-add-text {
     margin-bottom: 5px;
     @include category(14px,700,1);
@@ -44,7 +41,6 @@
         }
     }
 }
-// list-content
 .list-content{
     padding: 2rem 0;
     &__thumb{

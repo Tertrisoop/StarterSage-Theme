@@ -1,4 +1,4 @@
-// img
+
 .img{
     padding: 2rem 0;
     color:$colorx;
@@ -22,9 +22,7 @@
         }
     }
 }
-// content
 .content{
-    padding: 2rem 0;
     &__category{
         padding: 0;
         margin: 0;
@@ -33,7 +31,6 @@
             color:$colorblack;
         }
     }
-    // title
     &__title{
         h1{
             color:$colorblack;
@@ -44,7 +41,7 @@
     &__fixi{
         display:flex;
         align-items:center;
-        padding-top:10px;
+        padding: 20px;
         .avatar{
             @include avatar;   
         }
@@ -73,59 +70,6 @@
             padding-left: 5px;
         }
     }
-    // // share
-    // &__socical{
-    //     padding: 10px 0;
-    //     &-share{
-    //         padding-left: 10px;
-    //         @include category(12px,400,1);
-    //         &::before{
-    //             border-width: 9px 0 9px 11px;
-    //             border-color: transparent transparent transparent #e9e9e9;
-    //         }
-    //         &::before{
-    //             @include share-before;
-    //         }
-    //     }
-    // }
-    // content
-    &__blog{
-        // > h2{
-        //     padding: 25px 0;
-        //     @include text(26px,900,1);
-        // }
-        // > h3{
-        //     padding: 20px 0;
-        //     @include text(24px,900,1)
-        // }
-        // > p{
-        //     padding: 10px 0;
-        //     @include excerpt(17px,400,1.8)
-        // }
-        // > blockquote{
-        //     @include blockquote;
-        //     > p{
-        //         color:$primarycolor;
-        //         text-transform: none;
-        //         @include text(48px,900,1.2);
-        //     }
-        // }
-        // > figure > figcaption{
-        //     color:#444;
-        //     text-align:left;
-        //     margin:6px 0 26px;
-        //     @include text(11px,400,17px)
-        // }
-        // > figure > a > img{
-        //     width:100%;
-        //     height:500px
-        // }
-        img{
-            margin:0 auto;
-            align:center;
-        }
-    }
-    // tags
     &__tag{
         padding: 2rem 0;
         >ul{
@@ -147,7 +91,6 @@
             @include category(12px,700,1);
         }
     }
-    //author
     &__template{
         display: flex;
         align-items: center;
@@ -190,28 +133,9 @@
             @include text(14px,400,1);
         }
     }
-    // Get in Touch
     &__touch{
         padding:2rem 0;
-        &-form{
-            width:255px;
-        }
-        &-btn{
-            background-color:$primarycolor;
-            color:$Wcolor;
-            border:1px solid $primarycolor;
-            @include category(12px,700,1.8);
-        }
-        &-title{
-            padding-bottom: 20px;
-            @include excerpt(24px,800,1.2);
-        }
-        &-comment{
-            padding-bottom: 5px;
-            @include excerpt(16px,800,1.2)
-        }
     }
-    // related
     &__related{
         position: relative;
         padding:2rem 0;
@@ -260,53 +184,6 @@
         }
     }
 }
-.form-touch{
-    padding: 10px 15px 10px 15px;
-}
-.form-check{
-    padding-bottom: 20px;
-    padding-top:20px;
-}
-.socical{
-    &-handle{
-        @include handle;
-        &::after{
-            border-width: 8px 0 8px 10px;
-            border-color: transparent transparent transparent #fff;
-        }
-        &::after{
-            @include handle-after;
-        }
-    }
-    &__icon{
-        @include icon;
-        i {
-            padding-right: 10px;
-        }
-    }
-    &__text{
-        @include social-text;
-    }
-}
-.td-social{
-    &-network{
-        color: $Wcolor;
-        background-color:$primarycolor;
-        @include category(12px,400,1);
-    }
-    &-network{
-        @include network-rela;
-    }
-    &-but-icon{
-        i{
-            padding-right: 10px;
-        }
-    }
-    &-but-text::before{
-        @include text-before;
-    }
-}
-// aisder socical
 .asider{
     &__socical{
         &-facebook{
@@ -340,7 +217,6 @@
             }
         }
     }
-    // latest posts
     &__late{
         &-post{
            @include sticky;

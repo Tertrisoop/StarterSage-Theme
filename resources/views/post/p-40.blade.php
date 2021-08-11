@@ -24,7 +24,7 @@
         </span>
       </div>
       <div class="news__info-excerpt">
-        {!! substr( $post->post_content,0,160 ) !!}...
+        {!! strip_tags(substr( $post->post_content,0,160 )) !!}...
       </div>
     </div>
-  </div>
+</div>

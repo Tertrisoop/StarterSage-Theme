@@ -10,7 +10,7 @@
         </a>
     </div>
     <div class="articles__info">
-        <a href="{{ home_url("/category//") }}{!! $cat[0]->slug  !!}">{{$cat[0]->name}}</a>
+        <a href="{{ home_url("/category//") }}{!! $cat[0]->slug ?? "#"  !!}">{{$cat[0]->name ?? "page"}}</a>
         <h3 class="articles__title">
             <a href="{{ home_url('/') }}{!! $post->post_name  !!}" rel="bookmark" title="">
                 {!! $post->post_title  !!}
