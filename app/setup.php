@@ -99,6 +99,14 @@ add_action('widgets_init', function () {
         'name'          => __('Primary', 'sage'),
         'id'            => 'sidebar-primary'
     ] + $config);
+    register_sidebar([
+        'name'          => __('Foot', 'sage'),
+        'id'            => 'sidebar-foot'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('video', 'sage'),
+        'id'            => 'sidebar-video'
+    ] + $config);
 });
 
 /**

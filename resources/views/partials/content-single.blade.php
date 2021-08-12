@@ -114,27 +114,6 @@
             </div>
         </div>
                 <div class="col-xl-3 col-sm-1">
-                    {{-- <div class="asider__socical">
-                        <div class="asider__socical-title">
-                            <h3>Bình Luận</h3>
-                        </div>
-                        <div class="asider__socical-facebook">
-                            <a href="#" target="_blank" rel="noopener">
-                              <div class="asider__socical-icon">
-                                  <i class="fab fa-facebook-f"></i>
-                              </div>
-                              <span class="asider__socical-name">Fans</span>
-                            </a>
-                        </div>
-                        <div class="asider__socical-youtube">
-                            <a href="#" target="_blank" rel="noopener">
-                            <div class="asider__socical-icon">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                            <span class="asider__socical-name">Fans</span>
-                        </a>
-                        </div>
-                    </div> --}}
                     @php dynamic_sidebar('sidebar-primary') @endphp 
                 </div>
 
