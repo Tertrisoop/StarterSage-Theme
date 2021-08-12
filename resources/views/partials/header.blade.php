@@ -1,25 +1,26 @@
 <header class="banner" id="header">
 	<section id="mobile-header">
-		<nav class="navbar mobile-navbar">
-			<a class="mobile-navbar-brand" href="{{ home_url('/') }}">
+		<nav class="navbar navbar-expand-lg navbar-light bg-white">
+			<a class="navbar-brand" href="{{ home_url('/') }}">
 				<img src="@asset('images/logo.jpg')" alt="Logo">
-				
-
+				{{ get_bloginfo('name', 'display') }}
 			</a>
-			<a class="mobile-navbar-toggler" href="#mobile_navigation">
-				<i class="fas fa-bars"></i>
-			</a>
-
-			@if (has_nav_menu('mobile_navigation'))
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="fas fa-bars" style="font-size: 30px"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			  @if (has_nav_menu('mobile_navigation'))
 				@php
 				wp_nav_menu([
 					'theme_location'  => 'mobile_navigation',
 					'depth'           => 2,
 					'container_id'    => 'mobile_navigation',
+					'walker'          => new \App\wp_bootstrap4_navwalker(),
 				]);
 				@endphp 
 			@endif
-		</nav>
+			</div>
+		  </nav>
 	</section>
 
 	<section id="desktop-header">

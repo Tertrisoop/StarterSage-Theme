@@ -14,25 +14,25 @@
                   <img src="./img/corona-symbol-transparent.webp" alt="">
                 </span>
                 <span class="footer__text-wrap">
-                  <span class="footer__text-title">Coronavirus</span>
-                  <span class="footer__text-tagline">Medicine</span>
+                  <span class="footer__text-title">{{ get_bloginfo('name', 'display') }}</span>
+                  <span class="footer__text-tagline">{{ get_bloginfo('description', 'display') }}</span>
                 </span>
               </h1>
             </a>
         </div>
         <div class="col-auto">
-            <ul class="footer__socical-list">
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-            </ul>
+          @php dynamic_sidebar('sidebar-foot') @endphp 
         </div>
       </div>
     </div>
   </section>
-  <section class="foot row" style=" background-image: url('@asset('images/footer-bg.jpg')'); ">
-    @php dynamic_sidebar('sidebar-footer') @endphp
+  <section class="foot" style=" background-image: url('@asset('images/footer-bg.jpg')'); ">
+    <div class="container">
+      <div class="row">
+        @php dynamic_sidebar('sidebar-footer') @endphp
+      </div>
+    </div>
+    
     
   </section>
 </footer>

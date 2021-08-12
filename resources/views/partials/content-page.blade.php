@@ -1,36 +1,43 @@
-<section class="slider" style="background-image: url('@asset('images/hero-bg.jpg')'); ">
+@php $ojb = App::getPostrandom();  @endphp
+@if ($ojb)
+@php
+   $postrd = $ojb->posts[0];
+    $cate = get_the_category($postrd->ID);
+
+@endphp
+<section class="slider" style="background-image: url('{!!wp_get_attachment_url( get_post_thumbnail_id($postrd->ID), 'thumbnail' )!!}  '); ">
   <div class="container">
     <div class="row">
       <div class="col-md-5">
         <div class="banner__news ban">
           <div class="ban__info">
-            <a href="" class="ban__info-category">Prevention</a>
+            <a href="{{ home_url("/category//") }}{!! $cate[0]->slug  !!}" class="ban__info-category">{{$cate[0]->name}} </a>
           </div>
           <h2 class="ban__title">
-            <a href="#" rel="bookmark" title="Here is Why You Should Be Avoiding Crowds Because of COVID19">
-              Here is Why You Should Be Avoiding Crowds Because of COVID19
+            <a href="{{ home_url('/') }}@php $postrd->post_name @endphp" rel="bookmark" title="Here is Why You Should Be Avoiding Crowds Because of COVID19">
+              {!! $postrd->post_title  !!}
             </a>
           </h2>
           <div class="ban__date">
             <span>
-              <time class="ban__date" datetime="">April 8, 2020</time>
+              <time class="ban__date" datetime="">{{$postrd->post_date }}</time>
             </span>
           </div>
           <div class="ban__excerpt">
-            Prevention Sugar seems to have developed a reputation as the big bad wolf in relation to health. We have
-            reported on numerous studies associating sugar...
+            {!! strip_tags(substr( $postrd->post_content,0,160 )) !!}...
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+@endif
+
 <section class="sc-total">
   <div class="container">
     <div class="row">
-      <div class="col-3 md-3">
+      <div class="col-6 col-sm-6 col-md-3 statiscal">
         <div class="total__country">
-          <div class="total__country-name"></div>
           <div class="total__country-count" id="total">
             191,225,672
           </div>
@@ -39,9 +46,8 @@
           </div>
         </div>
       </div>
-      <div class="col-3 md-3">
+      <div class="col-6 col-sm-6 col-md-3 statiscal">
         <div class="total__country">
-          <div class="total__country-name"></div>
           <div class="total__country-count" id="death">
             4,105,847
           </div>
@@ -50,9 +56,8 @@
           </div>
         </div>
       </div>
-      <div class="col-3 md-3">
+      <div class="col-6 col-sm-6 col-md-3 statiscal">
         <div class="total__country">
-          <div class="total__country-name"></div>
           <div class="total__country-count" id="recover">
             172,462,518
           </div>
@@ -61,9 +66,8 @@
           </div>
         </div>
       </div>
-      <div class="col-3 md-3">
-        <div class="total__wrapper">
-          <div class="total__country-name"></div>
+      <div class="col-6 col-sm-6 col-md-3 statiscal">
+        <div class="total__country">
           <div class="total__country-count" id="active">
             14,662,307
           </div>
@@ -126,319 +130,16 @@
     </div>
   </div>
 </section>
-{{-- <section class="prevention">
-  <div class="container">
-    <h3 class="tdm-title tdm-title-sm">Prevention Strategy</h3>
-    <div class="row">
-      <div class="col-md-3">
-        <a href="#" class="prevention__img">
-          <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/recl2.jpg" class="prevention__img"
-            alt="G">
-        </a>
-      </div>
-      <div class="col-md-6">
-          <div id="carousel-Controls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                  <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="">
-                <div class="prevention__info">
-                  <a href="#" title="" class="post-category">Prevention</a>
-                  <h3 class="prevention__title">
-                    <a href="#" rel="bookmark" title="">
-                      Coronavirus Symptoms: What Are They and Should I See a Doctor?
-                    </a>
-                  </h3>
-                </div>
-              </div>
-              <div class="carousel-item">
-                  <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="">
-                <div class="prevention__info">
-                  <a href="#" title="" class="post-category">Prevention</a>
-                  <h3 class="prevention__title">
-                    <a href="#" rel="bookmark" title="">
-                      Coronavirus Symptoms: What Are They and Should I See a Doctor?
-                    </a>
-                  </h3>
-                </div>
-              </div>
-              <div class="carousel-item">
-                  <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="">
-                <div class="prevention__info">
-                  <a href="#" title="" class="post-category">Prevention</a>
-                  <h3 class="prevention__title">
-                    <a href="#" rel="bookmark" title="">
-                      Coronavirus Symptoms: What Are They and Should I See a Doctor?
-                    </a>
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <button class="right carousel-control-prev" type="button" data-bs-target="#carousel-Controls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden"></span>
-            </button>
-            <button class="left carousel-control-next" type="button" data-bs-target="#carousel-Controls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden"></span>
-            </button>
-          </div>
-        </div>
-      <div class="col-md-3">
-        <div class="prevention__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span class="entry-thumb">
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/11-485x360.jpg" alt="" title="">
-            </span>
-          </a>
-        </div>
-        <div class="prevention__in">
-          <a href="#">Prevention</a>
-          <h3 class="prevention__tit">
-            <a href="#" rel="bookmark" title="">
-              Can Authorities Really Track the Spread of the Coronavirus?
-            </a>
-          </h3>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-      </div>
-      <div class="col-md-3">
-        <div class="prevention__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span class="entry-thumb">
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/11-485x360.jpg" alt="" title="">
-            </span>
-          </a>
-        </div>
-        <div class="prevention__in">
-          <a href="#">Prevention</a>
-          <h3 class="prevention__tit">
-            <a href="#" rel="bookmark" title="">
-              Can Authorities Really Track the Spread of the Coronavirus?
-            </a>
-          </h3>
-        </div>
-      </div>
-      <div class="col-md-6">
-          <div id="carousel-ls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                  <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="" title="">
-                <div class="prevention__info">
-                  <a href="#" title="" class="post-category">Prevention</a>
-                  <h3 class="prevention__title">
-                    <a href="#" rel="bookmark" title="">
-                      Coronavirus Symptoms: What Are They and Should I See a Doctor?
-                    </a>
-                  </h3>
-                </div>
-              </div>
-              <div class="carousel-item">
-                  <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="" title="">
-                <div class="prevention__info">
-                  <a href="#" title="" class="post-category">Prevention</a>
-                  <h3 class="prevention__title">
-                    <a href="#" rel="bookmark" title="">
-                      Coronavirus Symptoms: What Are They and Should I See a Doctor?
-                    </a>
-                  </h3>
-                </div>
-              </div>
-              <div class="carousel-item">
-                  <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="" title="">
-                <div class="prevention__info">
-                  <a href="#" title="" class="post-category">Prevention</a>
-                  <h3 class="prevention__title">
-                    <a href="#" rel="bookmark" title="">
-                      Coronavirus Symptoms: What Are They and Should I See a Doctor?
-                    </a>
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <button class="right carousel-control-prev" type="button" data-bs-target="#carousel-ls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden"></span>
-            </button>
-            <button class="left carousel-control-next" type="button" data-bs-target="#carousel-ls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden"></span>
-            </button>
-          </div>
-        </div>
-    </div>
-  </div>
-</section> --}}
-{{-- <section class="global">
-  <div class="container">
-    <h3 class="tdm-title tdm-title-sm">Global Impact</h3>
-    <div class="row">
-      <div class="col-md-3">
-        <div class="prevention__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span class="entry-thumb">
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/11-485x360.jpg" alt="" title="">
-            </span>
-          </a>
-        </div>
-        <div class="prevention__in">
-          <a href="#">Prevention</a>
-          <h3 class="prevention__tit">
-            <a href="#" rel="bookmark" title="">
-              Can Authorities Really Track the Spread of the Coronavirus?
-            </a>
-          </h3>
-        </div>
-      </div>
-      <div class="col-md-6">
-          <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                  <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="" title="">
-                <div class="prevention__info">
-                  <a href="#" title="" class="post-category">Prevention</a>
-                  <h3 class="prevention__title">
-                    <a href="#" rel="bookmark" title="">
-                      Coronavirus Symptoms: What Are They and Should I See a Doctor?
-                    </a>
-                  </h3>
-                </div>
-              </div>
-              <div class="carousel-item">
-                  <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="" title="">
-                <div class="prevention__info">
-                  <a href="#" title="" class="post-category">Prevention</a>
-                  <h3 class="prevention__title">
-                    <a href="#" rel="bookmark" title="">
-                      Coronavirus Symptoms: What Are They and Should I See a Doctor?
-                    </a>
-                  </h3>
-                </div>
-              </div>
-              <div class="carousel-item">
-                  <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="" title="">
-                <div class="prevention__info">
-                  <a href="#" title="" class="post-category">Prevention</a>
-                  <h3 class="prevention__title">
-                    <a href="#" rel="bookmark" title="">
-                      Coronavirus Symptoms: What Are They and Should I See a Doctor?
-                    </a>
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <button class="right carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden"></span>
-            </button>
-            <button class="left carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden"></span>
-            </button>
-          </div>
-        </div>
-      <div class="col-md-3">
-        <a href="#" class="prevention__img">
-          <img class="prevention__img" src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/recl2.jpg"
-            alt="" title="">
-        </a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-          <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="" title="">
-                <div class="prevention__info">
-                  <a href="#" title="" class="post-category">Prevention</a>
-                  <h3 class="prevention__title">
-                    <a href="#" rel="bookmark" title="">
-                      Coronavirus Symptoms: What Are They and Should I See a Doctor?
-                    </a>
-                  </h3>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="" title="">
-                <div class="prevention__info">
-                  <a href="#" title="" class="post-category">Prevention</a>
-                  <h3 class="prevention__title">
-                    <a href="#" rel="bookmark" title="">
-                      Coronavirus Symptoms: What Are They and Should I See a Doctor?
-                    </a>
-                  </h3>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/p1.jpg" alt="" title="">
-                <div class="prevention__info">
-                  <a href="#" title="" class="post-category">Prevention</a>
-                  <h3 class="prevention__title">
-                    <a href="#" rel="bookmark" title="">
-                      Coronavirus Symptoms: What Are They and Should I See a Doctor?
-                    </a>
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <button class="right carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden"></span>
-            </button>
-            <button class="left carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden"></span>
-            </button>
-          </div>
-        </div>
-      <div class="col-md-3">
-        <div class="prevention__thumb">
-          <a href="#" rel="bookmark" title="">
-            <span class="entry-thumb">
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/11-485x360.jpg" alt="" title="">
-            </span>
-          </a>
-        </div>
-        <div class="prevention__in">
-          <a href="#">Prevention</a>
-          <h3 class="prevention__tit">
-            <a href="#" rel="bookmark" title="">
-              Can Authorities Really Track the Spread of the Coronavirus?
-            </a>
-          </h3>
-        </div>
-      </div>
-      <div class="col-md-3">
-      </div>
-    </div>
-  </div>
-</section> --}}
 <section class="video">
   <div class="container-fluid">
     <h4 class="td-block-title">
       <span class="td-pulldown-size">
-        Video News
+        Video 
       </span>
     </h4>
     <div class="row">
       <div class="col-12">
-        <div class="fotorama">
-          <a href="https://www.youtube.com/watch?v=QbVfZT9-D5o" data-img="desert-rose.jpg">
-            <img src="@asset('images/hero-bg.jpg')" alt=""
-              title="">
-          </a>
-          <a href="https://www.youtube.com/watch?v=kSybM5pLcH8" data-img="desert-rose.jpg">
-            <img src="@asset('images/hero-bg.jpg')" alt=""
-              title="">
-          </a>
-          <a href="https://www.youtube.com/watch?v=EDTdm7bR2Z0" data-img="desert-rose.jpg">
-            <img src="@asset('images/hero-bg.jpg')" alt=""
-              title="">
-          </a>
-        </div>
+        @php dynamic_sidebar('sidebar-video') @endphp 
       </div>
     </div>
   </div>
@@ -461,34 +162,33 @@
         <div class="articles__img">
           <a href="#">
             <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/recl4.jpg" alt="" title="">
+              <img src="@php echo get_stylesheet_directory_uri() @endphp/images/maxresdefault_8201f8ac.jpg')"  class="img-fluid" alt="" title="">
             </span>
           </a>
         </div>
         <div class="articles__aside">
           <h3 class="articles__title--aside">
-            <a href="#" rel="bookmark" title="">
-              Clinical Research Fails to Provide a Complete COVID19 Pattern
+            <a href="https://ncov.moh.gov.vn/" rel="bookmark" title="">
+              TRANG TIN VỀ DỊCH BỆNH VIÊM ĐƯỜNG HÔ HẤP CẤP COVID-19
+            </a>
+          </h3>
+          <h3 class="articles__title--aside">
+            <a href="https://moh.gov.vn/" rel="bookmark" title="">
+              Trang chủ - Cổng thông tin Bộ Y tế
             </a>
           </h3>
           <h3 class="articles__title--aside">
             <a href="#" rel="bookmark" title="">
-              Clinical Research Fails to Provide a Complete COVID19 Pattern
+              Trang Tổ Chức y tế thế giới (WHO)
+          </h3>
+          <h3 class="articles__title--aside">
+            <a href="https://www.facebook.com/thongtinchinhphu" rel="bookmark" title="">
+              thông tin chính phủ
             </a>
           </h3>
           <h3 class="articles__title--aside">
-            <a href="#" rel="bookmark" title="">
-              Clinical Research Fails to Provide a Complete COVID19 Pattern
-            </a>
-          </h3>
-          <h3 class="articles__title--aside">
-            <a href="#" rel="bookmark" title="">
-              Clinical Research Fails to Provide a Complete COVID19 Pattern
-            </a>
-          </h3>
-          <h3 class="articles__title--aside">
-            <a href="#" rel="bookmark" title="">
-              Clinical Research Fails to Provide a Complete COVID19 Pattern
+            <a href="https://suckhoedoisong.vn/" rel="bookmark" title="">
+              Báo Sức Khỏe và đời sống
             </a>
           </h3>
         </div>
