@@ -1,4 +1,3 @@
-
 <form role="search" method="get" class="search-form" action="{{ esc_url( home_url( '/' ) ) }}">
     <label>
       <span class="screen-reader-text">{{ _x( 'Search for:', 'label' ) }}</span>

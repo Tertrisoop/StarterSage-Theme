@@ -1,8 +1,4 @@
-{{-- <footer class="content-info">
-  <div class="container">
-    @php dynamic_sidebar('sidebar-footer') @endphp
-  </div>
-</footer> --}}
+
 <footer>
   <section class="footer"    >
     <div class="container">
@@ -11,7 +7,7 @@
             <a href="#" class="footer__logo">
               <h1>
                 <span class="footer__img">
-                  <img src="./img/corona-symbol-transparent.webp" alt="">
+                  {{-- <img src="./img/corona-symbol-transparent.webp" alt=""> --}}
                 </span>
                 <span class="footer__text-wrap">
                   <span class="footer__text-title">{{ get_bloginfo('name', 'display') }}</span>

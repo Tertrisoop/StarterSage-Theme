@@ -6,6 +6,18 @@
     justify-content: space-between;
     flex: 1;
 }
+@mixin  activehd {
+    content: '';
+    position: absolute;
+    width: 8px;
+    left: 1px;
+    right: auto;
+    margin: auto;
+    border-radius: 100%;
+    background-color: #31d6aa;
+    height: 8px;
+    bottom: 45px;
+}
 // Text
 @mixin text($fontsz,$fontW,$lheight){
     font-family: Lato !important;
