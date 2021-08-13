@@ -14,7 +14,7 @@
             <a href="{{ home_url("/category//") }}{!! $cate[0]->slug  !!}" class="ban__info-category">{{$cate[0]->name}} </a>
           </div>
           <h2 class="ban__title">
-            <a href="{{ home_url('/') }}@php $postrd->post_name @endphp" rel="bookmark" title="Here is Why You Should Be Avoiding Crowds Because of COVID19">
+            <a href="{{ home_url('/') }}{{$postrd->post_name}}" rel="bookmark" title="Here is Why You Should Be Avoiding Crowds Because of COVID19">
               {!! $postrd->post_title  !!}
             </a>
           </h2>
@@ -115,13 +115,15 @@
 </section>
 <section class="quick-read">
   <div class="container">
+    @php $cate = 3;  $post = App::getPostByCategory($cate,6); @endphp
     <h4 class="td-block-title">
       <span class="td-pulldown-size">
-        Quick Read
+        @php
+           echo( get_category($cate)->cat_name);
+        @endphp
       </span>
     </h4>
     <div class="row">
-      @php $post = App::getPostByCategory('3',6); @endphp
         @if($post)
           @foreach($post->get_posts() as $post)    
           @include('post.p-30')
@@ -146,7 +148,7 @@
 </section>
 <section class="articles">
   <div class="container">
-    <h3 class="tdm-title tdm-title-sm">Latest Articles</h3>
+    <h3 class="tdm-title tdm-title-sm">Bài Mới </h3>
     <div class="row">
       <div class="col-md-9">
         <div class="row">
@@ -162,7 +164,7 @@
         <div class="articles__img">
           <a href="#">
             <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/images/maxresdefault_8201f8ac.jpg')"  class="img-fluid" alt="" title="">
+              <img src="@php echo get_stylesheet_directory_uri() @endphp/dist/images/maxresdefault_8201f8ac.jpg')"  class="img-fluid" alt="" title="">
             </span>
           </a>
         </div>

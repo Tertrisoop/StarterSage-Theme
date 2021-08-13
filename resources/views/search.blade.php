@@ -7,7 +7,7 @@
         <div class="block-inner">
           <div class="row">
           
-            <img class="banner-ad__img img-fluid" src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/recl1.jpg" alt="" style="margin: 0 auto;
+            <img class="banner-ad__img img-fluid" src="@asset('images/recl1.jpg')" alt="" style="margin: 0 auto;
             margin-bottom: 20px;">
         </div>
         @include('partials.page-header')

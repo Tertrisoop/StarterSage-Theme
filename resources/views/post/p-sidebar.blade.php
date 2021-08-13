@@ -6,6 +6,6 @@
         </a>
       </h3>
     </div>
-    <img src="{!!wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' )!!}" class="ml-1 news__img"
+    <img src="{!!wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'post-widget',true )!!}" class="ml-1 news__img"
       alt="Generic placeholder image">
   </div>

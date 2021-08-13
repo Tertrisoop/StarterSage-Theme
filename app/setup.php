@@ -38,7 +38,7 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
      */
     add_theme_support('title-tag');
-
+   
     /**
      * Register navigation menus
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
@@ -55,7 +55,7 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
      */
     add_theme_support('post-thumbnails');
-
+    add_image_size('post-widget', 125, 125, true);
     /**
      * Enable HTML5 markup support
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
