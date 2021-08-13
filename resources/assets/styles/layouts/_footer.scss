@@ -183,12 +183,9 @@
 }
 // foot
 .foot{
-    background-size: contain;
-    background-image: url('/img/footer-bg.jpg'); 
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 100%;
-    height:450px;
-    background-repeat: no-repeat;
+    background-position: center;
     box-shadow: inset 0 0 0 2000px #000000ab;
     &__behavior{
         list-style-type: none;

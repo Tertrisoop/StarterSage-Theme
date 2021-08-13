@@ -20,10 +20,12 @@ class App extends Controller
             return __('Latest Posts', 'sage');
         }
         if (is_archive()) {
-            return get_the_archive_title();
+            $str = strpos(get_the_archive_title(),':');
+            $cat = substr( get_the_archive_title(),$str);
+            return sprintf(__('<i class="fas fa-tasks"></i> %s', 'sage'), $cat);
         }
         if (is_search()) {
-            return sprintf(__('Search Results for %s', 'sage'), get_search_query());
+            return sprintf(__('<i class="fas fa-search"></i> %s', 'sage'), get_search_query());
         }
         if (is_404()) {
             return __('Not Found', 'sage');
@@ -31,22 +33,45 @@ class App extends Controller
         return get_the_title();
     }
 
-    public static function getPostByCategory( $nbProjects)
+    public static function getPostByCategory( $nbProjects,$amout)
     {
-        
-        // choose $nbProjects projects from portfolio
         $args =  array(
-            'category_name' =>  $nbProjects,
-            'posts_per_page' => 3,
+            'cat' =>  $nbProjects,
+            'posts_per_page' => $amout,
+
         );
         $projects = new \Wp_Query($args);
         
         if ($projects->have_posts()) {
-            // get the total of projet
-            // $totalNbProjects = wp_count_posts( 'portfolio' )->publish;
+
             return $projects;
         } else {
-            return "no project";
+            return null;
+        }
+
+    }
+    public static function getPostrandom()
+    {
+        $args = array(
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'orderby' => 'rand',
+            'order' => 'DESC',
+            'posts_per_page' => 1,
+            // Using the date_query to filter posts from last week
+            'date_query' => array(
+                array(
+                    'after' => '2 week ago'
+                )
+            )
+        ); 
+        $postrd = new \Wp_Query($args);
+        
+        if ($postrd->have_posts()) {
+
+            return $postrd;
+        } else {
+            return null;
         }
 
     }

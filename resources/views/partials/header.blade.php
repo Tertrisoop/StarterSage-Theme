@@ -1,34 +1,34 @@
 <header class="banner" id="header">
 	<section id="mobile-header">
-		<nav class="navbar mobile-navbar">
-			<a class="mobile-navbar-brand" href="{{ home_url('/') }}">
-				<img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/7hostvn/logo.svg" alt="7Host Việt Nam">
-				
-
+		<nav class="navbar navbar-expand-lg navbar-light bg-white">
+			<a class="navbar-brand" href="{{ home_url('/') }}">
+				<img src="@asset('images/logo.jpg')" alt="Logo">
+				{{ get_bloginfo('name', 'display') }}
 			</a>
-			<a class="mobile-navbar-toggler" href="#mobile_navigation">
-				<i class="fas fa-bars"></i>
-			</a>
-
-			@if (has_nav_menu('mobile_navigation'))
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="fas fa-bars" style="font-size: 30px"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			  @if (has_nav_menu('mobile_navigation'))
 				@php
 				wp_nav_menu([
 					'theme_location'  => 'mobile_navigation',
 					'depth'           => 2,
 					'container_id'    => 'mobile_navigation',
+					'walker'          => new \App\wp_bootstrap4_navwalker(),
 				]);
 				@endphp 
 			@endif
-		</nav>
+			</div>
+		  </nav>
 	</section>
 
 	<section id="desktop-header">
 		<nav id="desktop-navbar-main" class="navbar navbar-expand">
 			<div class="container">
 				<a class="navbar-brand" href="{{ home_url('/') }}">
-					<img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/logo.jpg" alt="7Host Việt Nam">
-					<p>{{ get_bloginfo('name', 'display') }}
-						{{ get_bloginfo('name', 'display') }}</p>
+					<img src="@asset('images/logo.jpg')" alt="Logo">
+					{{ get_bloginfo('name', 'display') }}
 				</a>
 				@if (has_nav_menu('primary_navigation'))
 					@php
@@ -49,13 +49,8 @@
 		<nav id="desktop-navbar-bottom" class="navbar navbar-expand">
 			<div class="container">
 				<a class="navbar-brand" href="{{ home_url('/') }}">
-					<img src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/logo.jpg" alt="7Host Việt Nam">
-					<span>
-						{{ get_bloginfo('name', 'display') }}
-					</span><br>
-					<span>
-						{{ get_bloginfo('name', 'display') }}
-					</span>				
+					<img src="@asset('images/logo.jpg')" alt="Logo">					
+						{{ get_bloginfo('name', 'display') }}			
 				</a>
 				@if (has_nav_menu('primary_navigation'))
 					@php

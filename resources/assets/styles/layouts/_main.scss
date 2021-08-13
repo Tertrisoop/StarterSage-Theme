@@ -1,11 +1,12 @@
-@import "./mixins";
-@import "./variables";
-// banner
 .slider{
     @include banner;
 }
 .banner__news{
     padding-top: 200px;
+    padding-bottom: 20px;
+}
+.banner-ad{
+    padding-top: 1rem;
 }
 .ban{
     .ban__info{
@@ -42,9 +43,13 @@
 // total
 .sc-total {
     background-color: rgb(51, 51, 51);
-    height:100px;
     box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.5); 
     padding:1rem 0;
+}
+.statiscal{
+    border-style: solid;
+    border-color: $colorgray;
+    border-width: 0px 1px 0px 1px;
 }
 .total{
     &__country{
@@ -52,14 +57,9 @@
         flex-direction: column;
         align-items: center;
         align-items: flex-start;
-        
-        border-style: solid;
-        border-color: $colorgray;
-        border-width: 0px 1px 0px 0px;
-
         &-count{
-            @include text(35px,700,1);
-            margin: 15px 0 11px;
+            @include text(30px,700,1);
+            text-align: center;
             margin: 0 0 10px 0;
             color: $Wcolor;
         }
@@ -73,7 +73,7 @@
 }
 // news
 .news{
-    padding:3rem 0;
+    padding:2rem 0;
     max-height: 100%;
     &__paper{
         position: relative;
@@ -89,9 +89,6 @@
         @include category(14px,700,1);
     }
     &__paper{
-        &-thumb{
-            // padding-bottom: 60%;
-        }
         img{
             width:100%;
             height:270px;

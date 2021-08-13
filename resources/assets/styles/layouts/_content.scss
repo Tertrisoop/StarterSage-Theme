@@ -1,0 +1,279 @@
+
+.img{
+    padding: 2rem 0;
+    color:$colorx;
+    &__link{
+        >img{
+            position: relative;
+            width: 100%;
+            height: 700px;
+        }
+    }
+    &__color{
+        @include content-ab;
+    }
+    &__title{
+        @include title-ab;
+        >i {
+            color:$xam;
+        }
+        > span > a{
+            color:$xam;
+        }
+    }
+}
+.entry-content{
+    figure{
+        max-width: 100% !important;
+    }
+}
+.content{
+    &__category{
+        padding: 0;
+        margin: 0;
+        @include category(15px,700,1);
+        a{
+            color:$colorblack;
+        }
+    }
+    &__title{
+        h1{
+            color:$colorblack;
+            padding-top: 10px;
+            @include text(54px,900,1.2);
+        }
+    }
+    &__fixi{
+        display:flex;
+        align-items:center;
+        padding: 20px;
+        .avatar{
+            @include avatar;   
+        }
+    }
+    &__name{
+        > span{
+            margin-right: 5px;
+            color:$color;
+            text-transform: 1;
+            @include excerpt(15px,400,1);
+            a{
+                color:$colorblack;
+                text-transform: capitalize;
+                @include excerpt(15px,400,1);
+            }
+        }
+    }
+    &__date{
+        display: inline-block;
+        .entry-date{
+            color:$color;
+            @include excerpt(15px,400,1);
+        }
+        > span > svg{
+            width:15px;
+            padding-left: 5px;
+        }
+    }
+    &__tag{
+        padding: 2rem 0;
+        >ul{
+            display: inline-block;
+            margin: 0;
+            list-style-type: none;
+            font-size: 0;
+            >li{
+                display: inline-block;
+                margin-left: 0
+            }
+        }
+        a{
+            margin-right:6px;
+            padding: 3px 10px;
+            border:1px solid $primarycolor;
+            color: $Wcolor;
+            background-color:$primarycolor;
+            @include category(12px,700,1);
+        }
+    }
+    &__template{
+        display: flex;
+        align-items: center;
+        background-color:rgba(43,173,108,0.15);
+        img{
+            margin:20px;
+            width:130px;
+            height:130px;
+            border-radius: 100px;
+        }
+        &.tdb-author-photo{
+            display:table-cell;
+        }
+        &-descr{
+            color:$colorblack;
+            @include excerpt(15px,400,1.6);
+        }
+        &-social{
+            margin-top:6px;
+            a{
+                min-width: 13px;
+                height:13px;
+                margin:7px 14px 7px 0;
+                i{
+                    font-size:13px;
+                    vertical-align:middle;
+                    line-height:13px;
+                    color:$colorblack;
+                }
+            }
+        }
+    }
+    &__tamplate-author{
+        &.author-name{
+            @include author-name;
+        }
+        &.author-url{
+            color:$color;
+            margin-bottom: 6px;
+            @include text(14px,400,1);
+        }
+    }
+    &__touch{
+        padding:2rem 0;
+    }
+    &__related{
+        position: relative;
+        padding:2rem 0;
+        &-title{
+            @include excerpt(24px,800,1.2);
+        }
+        &-filter{
+            @include filter;
+            ul li{
+                margin-left: 24px;
+                display: inline-block;
+                line-height:1;
+            }
+            a{
+                color:$color;
+                @include category(11px,700,1)
+            }
+            a:hover{
+                color:$primarycolor;
+            }
+        }
+        &__thumb{
+            margin-bottom: 40px;
+            > a >span>img{
+                width:100%;
+                height:200px
+            }
+        }
+        &__info{
+            @include info-absolute;
+            a{
+                margin: 5px 0 0 0;
+                padding: 0;
+                display: inline-block;
+                background-color: rgba(255,255,255,0);
+                color:$Wcolor;
+                @include category(12px,700,1)
+            }
+        }
+        &__title{
+            margin: 0;
+            @include excerpt(15px,600,1.6);
+            a{
+                color:$Wcolor
+            }
+        }
+    }
+}
+.asider{
+    &__socical{
+        &-facebook{
+            @include icon-box-social;
+            background-color:#516eab;
+        }
+        &-youtube{
+            @include icon-box-social;
+            background-color:#e14e42;
+        }
+        &-icon{
+            i{
+                font-size: 35px;
+                margin-top:15px;
+                color:$Wcolor;
+            }
+        }
+        &-name{
+            color:$Wcolor;
+            padding: 0;
+            @include social-name;
+        }
+        &-title{
+            > h3{
+                padding-bottom: 20px;
+                @include excerpt(21px,800,1.2)
+            }
+        }
+    }
+    &__late{
+        &-post{
+           @include sticky;
+           &-title{
+               padding: 20px 0;
+               @include excerpt(21px,800,1.2)
+           }
+        }
+    }
+    &__category{
+        &-pos{
+            flex-direction: row;
+            padding: 10px;
+            background-color: rgba(43,173,108,0.15);
+            margin-bottom: 10px;
+        }
+    }
+    &__aside{
+        padding-top: 5px;
+        margin:0;
+        @include text(14px,700,1.2);
+        >a{
+            color:$colorblack;
+        }
+    }
+    &__img{
+        width:70px;
+        height:70px;
+        border-radius: 100%;
+    }
+}
+.comment-form{
+    &-author{
+        position: relative !important;
+        width:30% !important;
+    }
+    &-email{
+        position: relative  !important;;
+        width:30% !important;
+        margin: 0 auto  !important;;
+        top:-85px  !important;;
+    }
+    &-url{
+        position: absolute;
+        width: 30% !important;
+        margin: 0 auto !important;
+        right: 15px;
+        bottom: 116px;
+    }
+    &-cookies-consent{
+        margin-top: -70px;
+    }
+}
+.form-submit{
+    input{
+        background-color: $primarycolor !important;
+        border-color: $primarycolor !important;
+    }
+}

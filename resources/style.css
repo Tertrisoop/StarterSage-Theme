@@ -10,3 +10,13 @@ Text Domain:        sage
 License:            MIT License
 License URI:        http://opensource.org/licenses/MIT
 */
+p.comment-form-author{
+    position: relative;
+    width:30% !important;
+}
+p.comment-form-author-email{
+    position: relative;
+    width:30% !important;
+    margin: 0 auto;
+    top:50px;
+}

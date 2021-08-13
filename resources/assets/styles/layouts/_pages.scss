@@ -1,0 +1,132 @@
+
+.tdb-add-text {
+    margin-bottom: 5px;
+    @include category(14px,700,1);
+}
+.tdb-title-text {
+    text-transform: none;
+    padding-bottom: 20px;
+    @include excerpt(30px,800,1.2);
+}
+.vaccine{
+    padding: 1rem 0;
+    background-color:$colorx;
+    &__thumb{
+        margin-bottom:40px;
+        img{
+            width:100%;
+            height:260px;
+        }
+    }
+    &__info{
+        @include absolute;
+        bottom:40px;
+        margin: 0 0 -10px 10px;
+        padding:0 50px 20px 20px;
+        background-color: $bgc;
+        > a{
+            margin:-26px 0 0 0;
+            padding:0;
+            display: inline-block;
+            color:$Wcolor;
+            background-color:rgba(255,255,255,0);
+            @include category(14px,700,1);
+        }
+    }
+    &__title{
+        margin: 0;
+        @include excerpt(23px,500,1.2);
+        > a{
+            color: $Wcolor;
+        }
+    }
+}
+.list-content{
+    padding: 2rem 0;
+    &__thumb{
+        img{
+            width:100%;
+            height:250px;
+        }
+    }
+    &__info{
+        padding:20px 0 10px 10px;
+        border-color: #eaeaea;
+        > a{
+            margin:0;
+            padding: 6px 10px;
+            background-color: $primarycolor;
+            color:$Wcolor;
+            @include category(12px,400,1);
+        }
+    }
+    &__title{
+        margin:12px 0 0;
+        @include text(12px,900,1.2);
+        > a{
+            color: $colorblack;
+        }
+    }
+    &__img{
+        > img{
+            width:100%;
+            height:250px;
+        }
+    }
+    &__aside{
+        padding:10px 0 0 20px;
+        &--aside{
+            margin: 0;
+            padding-bottom: 20px;
+            @include text(16px,700,1.4);
+            > a{
+                color: $colorblack;
+            }
+        }
+    }
+    // aside
+    &__aside{
+        margin:0;
+        @include text(14px,700,1.2);
+        >a {
+            color:$colorblack;
+        }
+    }
+    &__img{
+        width:100px;
+        height:100px;
+        border-radius: 100%;
+    }
+    &-pos{
+        padding-bottom: 20px;
+    }
+}
+.widget{
+    
+    h6{
+        background-color: #31d6aa;
+        font-family: Lato !important;
+        font-size: 12px !important;
+        text-transform: uppercase !important;
+        outline: none;
+        width: 100%;
+        padding: 3px 18px;
+        min-height: 45px;
+        /* background-color: #4db2ec; */
+        color: #fff;
+        border: 0;
+    }
+    ul{
+        list-style-type: none;
+        a{
+            font-size: 15px;
+            color: #aaaaaa;
+            box-shadow: inset 0 0 0 0 #31d6aa;
+        }
+        
+        a:hover{
+            color:$primarycolor;
+        }
+        
+    }
+}

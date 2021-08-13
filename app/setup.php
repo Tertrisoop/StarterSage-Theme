@@ -85,13 +85,27 @@ add_action('widgets_init', function () {
         'before_title'  => '<h3>',
         'after_title'   => '</h3>'
     ];
+    $configft = [
+        'before_widget' => '<section class="col widget %1$s %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>'
+    ];
     register_sidebar([
         'name'          => __('Footer', 'sage'),
         'id'            => 'sidebar-footer'
-    ] + $config);
+    ] + $configft);
     register_sidebar([
         'name'          => __('Primary', 'sage'),
         'id'            => 'sidebar-primary'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Foot', 'sage'),
+        'id'            => 'sidebar-foot'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('video', 'sage'),
+        'id'            => 'sidebar-video'
     ] + $config);
 });
 
