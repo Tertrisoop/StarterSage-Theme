@@ -20,13 +20,11 @@
 }
 // Text
 @mixin text($fontsz,$fontW,$lheight){
-    font-family: Lato !important;
     font-size: $fontsz;
     line-height: $lheight;
     font-weight:$fontW;
 }
 @mixin category($fontsize,$fontWhgt,$lineheight){
-    font-family: Lato !important;
     font-size: $fontsize;
     line-height: $lineheight;
     font-weight:$fontWhgt;
@@ -239,3 +237,16 @@
     color: #fdfdfd;
     border: 0;
 }
+@mixin  hover {
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // width: 94%;
+    // height: 100%;
+    // text-align: center;
+    // display: flex;
+    // align-items: center;
+    transform-origin: bottom top;
+    transition: all ease-in-out 3s ;
+}
+

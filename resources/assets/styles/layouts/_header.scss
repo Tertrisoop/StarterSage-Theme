@@ -9,7 +9,7 @@
 .navbar-brand {
   padding: 0;
   img {
-    width: 70px;
+    width: 60px;
   }
 }
 #mobile-header {
@@ -39,6 +39,7 @@
 .mobile-navbar-brand {
   img {
     width: 70px;
+    margin-bottom: 10px;  
   }
 }
 
@@ -87,12 +88,12 @@
   #desktop-navbar-main {
     padding: 0;
     border-bottom: 1px solid #fff1;
-
+    max-height: 80px;
     .navbar-brand {
       color: #000;
       padding: 0;
       img {
-        width: 70px;
+        width: 60px;
       }
     }
   }
@@ -149,6 +150,7 @@
       display: block;
       transition: opacity 1s ease-out;
       background-color: #fff;
+      max-height: 80px;
     }
   }
 }

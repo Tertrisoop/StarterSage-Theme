@@ -1,7 +1,7 @@
 @php
     $cat = get_the_category($post->ID);
 @endphp
-<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="col-12 col-md-6 col-lg-4 mb-5 quickread">
     <div class="quick-read__thumb">
       <a href="{{ home_url('/') }}{!! $post->post_name  !!}" rel="bookmark" title="">
         <span>
