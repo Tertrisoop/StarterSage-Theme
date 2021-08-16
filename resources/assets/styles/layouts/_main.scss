@@ -57,6 +57,7 @@
         flex-direction: column;
         align-items: center;
         align-items: flex-start;
+        margin-bottom: 5px;
         &-count{
             @include text(30px,700,1);
             text-align: center;
@@ -86,7 +87,7 @@
         padding: 10px 14px 5px;
         background-color: $Wcolor;
         color: $primarycolor;
-        @include category(14px,700,1);
+        @include category(14px,500,1);
     }
     &__paper{
         img{
@@ -104,7 +105,7 @@
         border-color: $Wcolor;
         &-tile{
             margin:15px 0 12px 0;
-            @include text(30px,900,1.1);
+            @include text(30px,00,1.1);
             a{
                 color:$colorblack;
             }
@@ -112,7 +113,7 @@
         &-smtile{
             margin:15px 0 12px 0;
             padding-bottom: 10px;
-            @include text(18px,900,1.1);
+            @include text(18px,00,1.1);
             a{
                 color:$colorblack;
             }
@@ -160,6 +161,21 @@
     text-align:left;
     @include excerpt(26px,800,1.2);
 }
+.quickread{
+    overflow: hidden;
+    &:hover{
+        .quick-read__info{
+           display: block;
+           animation-name: example;
+           animation-duration: 1.5s;
+           overflow: hidden;
+        }
+    }
+}
+@keyframes example {
+    0%   {left:100%}
+    100% {left:28px}
+  }
 .quick-read{
     padding:1rem 0;
     background-color:$colorx;
@@ -171,6 +187,7 @@
         }
     }
     &__info{
+        display: none;
         @include absolute;
         color:$Wcolor;
         bottom:40px;
@@ -301,7 +318,7 @@
     }
     &__title{
         margin:12px 0 0 0;
-        @include text(18px,900,1.2);
+        @include text(18px,600,1.2);
         a{
             color: $colorblack;
         }

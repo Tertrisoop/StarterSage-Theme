@@ -145,6 +145,7 @@
       </div>
     </div>
   </div>
+  
 </section>
 <section class="articles">
   <div class="container">
@@ -164,7 +165,7 @@
         <div class="articles__img">
           <a href="#">
             <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/dist/images/maxresdefault_8201f8ac.jpg')"  class="img-fluid" alt="" title="">
+              <img src="@asset('images/maxresdefault.jpg')"  class="img-fluid" alt="" title="">
             </span>
           </a>
         </div>
