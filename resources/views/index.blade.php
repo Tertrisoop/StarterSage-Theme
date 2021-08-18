@@ -31,7 +31,7 @@
 
               </div>
           </div>
-          <div class="col-12 col-lg-3">
+          <div class="col-12 col-lg-3 animatable bounceInRight">
           @php dynamic_sidebar('sidebar-primary') @endphp
           </div>
         </div>

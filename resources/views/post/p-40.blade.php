@@ -1,7 +1,7 @@
 @php
     $cat = get_the_category($post->ID);
 @endphp
-<div class="col-md-5">
+<div class="col-md-5 animatable bounceInLeft">
     <div class="news__paper">
         <a href="{{ home_url("/category//") }}{!! $cat[0]->slug  !!}" class="news__category">{{$cat[0]->name}} </a>
       <div class="news__paper-thumb">

@@ -184,7 +184,10 @@
             margin: 0;
             @include excerpt(15px,600,1.6);
             a{
-                color:$Wcolor
+                color:$Wcolor;
+                &:hover {
+                    color:$primarycolor;
+                }
             }
         }
     }
@@ -214,7 +217,10 @@
         &-title{
             > h3{
                 padding-bottom: 20px;
-                @include excerpt(21px,800,1.2)
+                @include excerpt(21px,800,1.2);
+                &:hover {
+                    color:$primarycolor;
+                }
             }
         }
     }
@@ -241,6 +247,9 @@
         @include text(14px,700,1.2);
         >a{
             color:$colorblack;
+            &:hover{
+                color:$primarycolor;
+            }
         }
     }
     &__img{

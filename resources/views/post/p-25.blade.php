@@ -1,7 +1,7 @@
 @php
     $cat = get_the_category($post->ID);
 @endphp
-<div class="col-md-4">
+<div class="col-md-4 animatable fadeInUp">
     <div class="articles__thumb">
         <a href="{{ home_url('/') }}{!! $post->post_name  !!}" rel="bookmark" title="">
             <span>
