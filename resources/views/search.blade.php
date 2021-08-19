@@ -18,11 +18,13 @@
         <div class="row">
           <div class="col-12 col-lg-9">
               <div class="row">
-                    @if (!have_posts())
-                  <div class="col-12 alert alert-warning">
-                    {{ __('Sorry, no results were found.', 'sage') }}
-                  </div>
                   {!! get_search_form(false) !!}
+                  @if (!have_posts())
+                  <div class="col-12 alert alert-warning">
+                    {{-- {{ __('Sorry, no results were found.', 'sage') }} --}}
+                    @include('partials.404')
+                  </div>
+                  
                 @endif
                 @while (have_posts()) @php the_post() @endphp
                   @include('post.p-25')
