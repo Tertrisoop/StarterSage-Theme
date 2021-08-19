@@ -88,7 +88,7 @@
           @php $loop->iteration; @endphp
           @if ($loop->iteration == 1)
             @include('post.p-40')
-          <div class="col-md-4">
+          <div class="col-md-4 animatable bounceIn">
             <div class="row">
           @else
             @include('post.p-20')
@@ -99,7 +99,7 @@
             </div>
           </div>
       @endif
-      <div class="col-md-3">
+      <div class="col-md-3 animatable bounceInRight">
         @php $post = App::getPostByCategory('6',5); @endphp
         @if($post)
           @foreach($post->get_posts() as $post)  @php
@@ -140,7 +140,7 @@
       </span>
     </h4>
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 animatable bounceIn">
         @php dynamic_sidebar('sidebar-video') @endphp 
       </div>
     </div>
@@ -161,7 +161,7 @@
           @endif
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 animatable bounceInRight">
         <div class="articles__img">
           <a href="#">
             <span>

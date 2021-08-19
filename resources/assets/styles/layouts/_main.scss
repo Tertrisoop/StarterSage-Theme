@@ -1,3 +1,22 @@
+//animation 
+.animatable {
+    @include animatable;
+    }
+    .animated {
+    @include animated;
+    }
+    .animated.bounceIn {
+        @include bounceIn;
+    }
+    .animated.bounceInLeft {
+    @include bounceInLeft;
+    }
+    .animated.bounceInRight {
+    @include bounceInRight;
+    }
+    .animated.fadeInUp {
+    @include fadeInUp;
+    }
 .slider{
     @include banner;
 }
@@ -108,6 +127,10 @@
             @include text(30px,00,1.1);
             a{
                 color:$colorblack;
+                @include line(105px,3);
+                &:hover{
+                    color:$primarycolor;
+                }
             }
         }
         &-smtile{
@@ -116,6 +139,10 @@
             @include text(18px,00,1.1);
             a{
                 color:$colorblack;
+                @include line(60px,3);
+                &:hover{
+                    color:$primarycolor;
+                }
             }
         }
         &-date{
@@ -139,6 +166,10 @@
         @include text(14px,700,1.2);
         a{
             color:$colorblack;
+            @include line(70px,4);
+            &:hover{
+                color:$primarycolor;
+            }
         }
     }
     &__img{
@@ -206,6 +237,12 @@
     &__title{
         margin: 0;
         @include excerpt(23px,500,1.2);
+        a{
+            @include line(40px,3);
+            &:hover{
+                color:$primarycolor;
+        }
+        }
     }
 }
 // prevention
@@ -321,6 +358,10 @@
         @include text(18px,600,1.2);
         a{
             color: $colorblack;
+            @include  line(65px,3);
+            &:hover{
+                color:$primarycolor;
+            }
         }
         &--aside{
             margin:0;
@@ -328,6 +369,9 @@
             @include text(16px,700,1.4);
             a{
                 color:$colorblack;
+                &:hover{
+                    color:$primarycolor;
+                }
             }
         }
     }
