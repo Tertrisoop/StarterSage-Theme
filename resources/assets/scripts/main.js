@@ -70,7 +70,7 @@ jQuery(function($) {
       $(window).off('scroll', doAnimations);
     }
     
-        $animatables.each(function(i) {
+        $animatables.each(function() {
        var $animatable = $(this);
             if (($animatable.offset().top + $animatable.height() - 20) < offset) {
         $animatable.removeClass('animatable').addClass('animated');
