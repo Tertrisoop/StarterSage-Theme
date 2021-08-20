@@ -251,7 +251,7 @@
         <div class="articles__img">
           <a href="#">
             <span>
-              <img src="@asset('images/maxresdefault.jpg')"  class="img-fluid" alt="" title="">
+              <img src="@asset('images/maxresdefault.jpg')" width="250" height="140" class="img-fluid" alt="" title="" loading=lazy>
             </span>
           </a>
         </div>

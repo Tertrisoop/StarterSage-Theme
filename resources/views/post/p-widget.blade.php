@@ -6,5 +6,5 @@
         </a>
       </h3>
     </div>
-    <img class="ml-1 asider__img" src="{!!wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'large' )!!}" alt="">
+    <img class="ml-1 asider__img" src="{!!wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'large' )!!}" alt="" loading="lazy">
 </div>

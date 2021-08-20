@@ -5,7 +5,7 @@
     <div class="quick-read__thumb">
       <a href="{{ home_url('/') }}{!! $post->post_name  !!}" rel="bookmark" title="">
         <span>
-          <img src="{!!wp_get_attachment_image_url( get_post_thumbnail_id($post->ID),'large' )!!}" alt="G">
+          <img src="{!!wp_get_attachment_image_url( get_post_thumbnail_id($post->ID),'large' )!!}" alt="G" loading="lazy">
       </a>
     </div>
     <div class="quick-read__info">

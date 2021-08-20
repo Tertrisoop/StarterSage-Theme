@@ -76,8 +76,6 @@
     &__country{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        align-items: flex-start;
         margin-bottom: 5px;
         &-count{
             @include text(30px,700,1);
@@ -323,12 +321,7 @@
 .carousel-inner{
     padding-bottom: 20px;
 }
-.left{
-   @include slider-left;
-  }
-  .right {
-    @include slider-right;
-  }
+
 // video
 .video{
     padding:2rem 0;
