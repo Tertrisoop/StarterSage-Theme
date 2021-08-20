@@ -7,7 +7,7 @@
       <div class="news__paper-thumb">
         <a href="{{ home_url('/') }}{!! $post->post_name  !!}" rel="bookmark" title="{!! $post->post_title  !!}">
           <span class="entry-thumb" data-bg="">
-            <img src="{!!wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'large' )!!}" alt="">
+            <img src="{!!wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'large' )!!}" alt="" loading="lazy">
           </span>
         </a>
       </div>

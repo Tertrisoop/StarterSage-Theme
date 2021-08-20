@@ -21,7 +21,6 @@
                   {!! get_search_form(false) !!}
                   @if (!have_posts())
                   <div class="col-12 alert alert-warning">
-                    {{-- {{ __('Sorry, no results were found.', 'sage') }} --}}
                     @include('partials.404')
                   </div>
                   

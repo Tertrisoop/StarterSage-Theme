@@ -2,7 +2,7 @@
 	<section id="mobile-header">
 		<nav class="navbar navbar-expand-lg navbar-light bg-white">
 			<a class="navbar-brand" href="{{ home_url('/') }}">
-				<img src="@asset('images/logo.jpg')" alt="Logo">
+				<img src="@asset('images/logo.jpg')" width="60" height="70" alt="Logo">
 				{{ get_bloginfo('name', 'display') }}
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
 		<nav id="desktop-navbar-main" class="navbar navbar-expand">
 			<div class="container">
 				<a class="navbar-brand" href="{{ home_url('/') }}">
-					<img src="@asset('images/logo.jpg')" alt="Logo">
+					<img src="@asset('images/logo.jpg')" width="60" height="60" alt="Logo">
 					{{ get_bloginfo('name', 'display') }}
 				</a>
 				@if (has_nav_menu('primary_navigation'))
@@ -64,7 +64,7 @@
 		<nav id="desktop-navbar-bottom" class="navbar navbar-expand">
 			<div class="container">
 				<a class="navbar-brand" href="{{ home_url('/') }}">
-					<img src="@asset('images/logo.jpg')" alt="Logo">					
+					<img src="@asset('images/logo.jpg')" width="60" height="60" alt="Logo" >					
 						{{ get_bloginfo('name', 'display') }}			
 				</a>
 				@if (has_nav_menu('primary_navigation'))
