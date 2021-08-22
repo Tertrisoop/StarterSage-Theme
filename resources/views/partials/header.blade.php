@@ -45,10 +45,7 @@
 					@endphp 
 				@endif
 				<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-	Launch demo modal
-  </button>
-  
+  <i class="fas fa-search" data-toggle="modal" data-target="#exampleModal"></i>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
