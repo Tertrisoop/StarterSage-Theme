@@ -205,35 +205,7 @@
     width: 100%;
     padding: 0;
 }
-// slider
-@mixin slider-left{
-    position: absolute;
-    width: 0;
-    height: 0;
-    right:45px;
-    top: 15px;
-	background-color: rgba(0,0,0,.8);
-    min-width: 29px;
-    min-height: 29px;
-    line-height: 30px;
-    font-size: 10px;
-    color: #fdfdfd;
-    border: 0;
-}
-@mixin slider-right{
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: 15px;
-   left:500px;
-	background-color: rgba(0,0,0,.8);
-    min-width: 29px;
-    min-height: 29px;
-    line-height: 30px;
-    font-size: 10px;
-    color: #fdfdfd;
-    border: 0;
-}
+
 @mixin  hover {
     transform-origin: bottom top;
     transition: all ease-in-out 3s ;

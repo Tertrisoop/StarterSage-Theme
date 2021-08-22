@@ -45,16 +45,16 @@
 					@endphp 
 				@endif
 				<!-- Button trigger modal -->
-  <i class="fas fa-search" data-toggle="modal" data-target="#exampleModal"></i>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-	  <div class="modal-content">
-		{!! get_search_form(false) !!}
-		  
-		</div>
-	  </div>
-	</div>
+				<i class="fas fa-search" data-toggle="modal" data-target="#exampleModal" style="font-size: 25px"></i>
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						{!! get_search_form(false) !!}
+						
+						</div>
+					</div>
+				</div>
   </div>
 			</div>
 		</nav>
@@ -78,6 +78,16 @@
 					]);
 					@endphp 
 				@endif
+				<i class="fas fa-search" data-toggle="modal" data-target="#exampleModal" style="font-size: 25px"></i>
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			{!! get_search_form(false) !!}
+			
+			</div>
+		</div>
+	</div>
 			</div>
 		</nav>
 	</section>
