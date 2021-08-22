@@ -1,16 +1,4 @@
 //animation
-.animatable {
-    @include animatable;
-    }
-    .animated {
-    @include animated;
-    }
-    .animated.bounceInRight {
-    @include bounceInRight;
-    }
-    .animated.fadeInUp {
-    @include fadeInUp;
-    }
 .tdb-add-text {
     margin-bottom: 5px;
     @include category(14px,700,1);

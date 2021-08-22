@@ -2,7 +2,7 @@
     <div class="content__related__thumb">
         <a href="{{ home_url('/') }}{!! $postrelate->postrelate_name  !!}" rel="bookmark" title="">
           <span>
-            <img src="{!!wp_get_attachment_image_url( get_post_thumbnail_id($postrelate->ID), 'large' )!!}" alt="">
+            <img src="{!!wp_get_attachment_image_url( get_post_thumbnail_id($postrelate->ID), 'large' )!!}" alt="" loading="lazy">
           </span>
         </a>
       </div>

@@ -41,6 +41,7 @@
         @include text(42px,900,1.2);
         a{
             color: $Wcolor;
+            @include line(105px,3);
         }
     }
     &__date{
@@ -57,6 +58,7 @@
         column-count:1;
         column-gap: 48px;
         @include excerpt(18px,400,1.4);
+        @include line(105px,3);
     }
 }
 // total
@@ -74,8 +76,6 @@
     &__country{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        align-items: flex-start;
         margin-bottom: 5px;
         &-count{
             @include text(30px,700,1);
@@ -321,12 +321,7 @@
 .carousel-inner{
     padding-bottom: 20px;
 }
-.left{
-   @include slider-left;
-  }
-  .right {
-    @include slider-right;
-  }
+
 // video
 .video{
     padding:2rem 0;
@@ -421,4 +416,7 @@
             opacity:0.7;
         }
     }
+}
+.carousel-inner{
+    padding-bottom: 0px !important;
 }

@@ -25,7 +25,6 @@
                   {{-- {{ __('Sorry, no results were found.', 'sage') }} --}}
                   @include('partials.404')
                 </div>
-                  
                 @endif
                 @while (have_posts()) @php the_post() @endphp
                   @include('post.p-25')
