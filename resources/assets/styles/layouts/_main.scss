@@ -1,3 +1,22 @@
+//animation 
+.animatable {
+    @include animatable;
+    }
+    .animated {
+    @include animated;
+    }
+    .animated.bounceIn {
+        @include bounceIn;
+    }
+    .animated.bounceInLeft {
+    @include bounceInLeft;
+    }
+    .animated.bounceInRight {
+    @include bounceInRight;
+    }
+    .animated.fadeInUp {
+    @include fadeInUp;
+    }
 .slider{
     @include banner;
 }
@@ -22,6 +41,7 @@
         @include text(42px,900,1.2);
         a{
             color: $Wcolor;
+            @include line(105px,3);
         }
     }
     &__date{
@@ -38,6 +58,7 @@
         column-count:1;
         column-gap: 48px;
         @include excerpt(18px,400,1.4);
+        @include line(105px,3);
     }
 }
 // total
@@ -55,8 +76,7 @@
     &__country{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        align-items: flex-start;
+        margin-bottom: 5px;
         &-count{
             @include text(30px,700,1);
             text-align: center;
@@ -86,7 +106,7 @@
         padding: 10px 14px 5px;
         background-color: $Wcolor;
         color: $primarycolor;
-        @include category(14px,700,1);
+        @include category(14px,500,1);
     }
     &__paper{
         img{
@@ -104,17 +124,25 @@
         border-color: $Wcolor;
         &-tile{
             margin:15px 0 12px 0;
-            @include text(30px,900,1.1);
+            @include text(30px,00,1.1);
             a{
                 color:$colorblack;
+                @include line(105px,3);
+                &:hover{
+                    color:$primarycolor;
+                }
             }
         }
         &-smtile{
             margin:15px 0 12px 0;
             padding-bottom: 10px;
-            @include text(18px,900,1.1);
+            @include text(18px,00,1.1);
             a{
                 color:$colorblack;
+                @include line(60px,3);
+                &:hover{
+                    color:$primarycolor;
+                }
             }
         }
         &-date{
@@ -138,6 +166,10 @@
         @include text(14px,700,1.2);
         a{
             color:$colorblack;
+            @include line(70px,4);
+            &:hover{
+                color:$primarycolor;
+            }
         }
     }
     &__img{
@@ -160,6 +192,21 @@
     text-align:left;
     @include excerpt(26px,800,1.2);
 }
+.quickread{
+    overflow: hidden;
+    &:hover{
+        .quick-read__info{
+           display: block;
+           animation-name: example;
+           animation-duration: 1.5s;
+           overflow: hidden;
+        }
+    }
+}
+@keyframes example {
+    0%   {left:100%}
+    100% {left:28px}
+  }
 .quick-read{
     padding:1rem 0;
     background-color:$colorx;
@@ -171,6 +218,7 @@
         }
     }
     &__info{
+        display: none;
         @include absolute;
         color:$Wcolor;
         bottom:40px;
@@ -189,6 +237,12 @@
     &__title{
         margin: 0;
         @include excerpt(23px,500,1.2);
+        a{
+            @include line(40px,3);
+            &:hover{
+                color:$primarycolor;
+        }
+        }
     }
 }
 // prevention
@@ -267,12 +321,7 @@
 .carousel-inner{
     padding-bottom: 20px;
 }
-.left{
-   @include slider-left;
-  }
-  .right {
-    @include slider-right;
-  }
+
 // video
 .video{
     padding:2rem 0;
@@ -301,9 +350,13 @@
     }
     &__title{
         margin:12px 0 0 0;
-        @include text(18px,900,1.2);
+        @include text(18px,600,1.2);
         a{
             color: $colorblack;
+            @include  line(65px,3);
+            &:hover{
+                color:$primarycolor;
+            }
         }
         &--aside{
             margin:0;
@@ -311,6 +364,9 @@
             @include text(16px,700,1.4);
             a{
                 color:$colorblack;
+                &:hover{
+                    color:$primarycolor;
+                }
             }
         }
     }
@@ -318,4 +374,49 @@
         padding:10px 0 0 20px;
     }
 }
-
+// search
+.modal-content{
+    width:170%;
+    height: 100px;
+    margin-left: -30%;
+    .search-form {
+        background-color: rgb(255, 255, 255);
+        .search-field { 
+            width: 660px !important;
+            flex: 1;
+            background-color: transparent;
+            border: 1px solid black;        
+        }
+        .search-submit { 
+            background-color: #31d6aa;
+            &:hover{
+                opacity:0.7;
+            }
+        }
+    }
+}
+.search-form {
+    
+    width: 100%; 
+    height: 100px;
+    
+    background-color: rgb(255, 255, 255);
+    .search-field {
+        
+        margin-left: 13%;
+        width: 750px !important;
+        flex: 1;
+        background-color: transparent;
+        border: 1px solid black;
+        
+    }
+    .search-submit { 
+        background-color: #31d6aa;
+        &:hover{
+            opacity:0.7;
+        }
+    }
+}
+.carousel-inner{
+    padding-bottom: 0px !important;
+}

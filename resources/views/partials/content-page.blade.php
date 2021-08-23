@@ -1,38 +1,124 @@
-@php $ojb = App::getPostrandom();  @endphp
-@if ($ojb)
-@php
-   $postrd = $ojb->posts[0];
-    $cate = get_the_category($postrd->ID);
 
-@endphp
-<section class="slider" style="background-image: url('{!!wp_get_attachment_url( get_post_thumbnail_id($postrd->ID), 'thumbnail' )!!}  '); ">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5">
-        <div class="banner__news ban">
-          <div class="ban__info">
-            <a href="{{ home_url("/category//") }}{!! $cate[0]->slug  !!}" class="ban__info-category">{{$cate[0]->name}} </a>
+<section class="slider-rmd">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        @php $ojb = App::getPostrandom();  @endphp
+        @if ($ojb)
+        @php
+           $postrd = $ojb->posts[0];
+            $cate = get_the_category($postrd->ID);
+        @endphp
+        <section class="slider" style="background-image: url('{!!wp_get_attachment_url( get_post_thumbnail_id($postrd->ID), 'thumbnail' )!!}  ');height:600px">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="banner__news ban">
+                  <div class="ban__info">
+                    <a href="{{ home_url("/category//") }}{!! $cate[0]->slug  !!}" class="ban__info-category">{{$cate[0]->name}} </a>
+                  </div>
+                  <h2 class="ban__title">
+                    <a href="{{ home_url('/') }}{{$postrd->post_name}}" rel="bookmark" title="Here is Why You Should Be Avoiding Crowds Because of COVID19">
+                      {!! $postrd->post_title  !!}
+                    </a>
+                  </h2>
+                  <div class="ban__date">
+                    <span>
+                      <time class="ban__date" datetime="">{{$postrd->post_date }}</time>
+                    </span>
+                  </div>
+                  <div class="ban__excerpt">
+                    {!! strip_tags(substr( $postrd->post_content,0,160 )) !!}...
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <h2 class="ban__title">
-            <a href="{{ home_url('/') }}@php $postrd->post_name @endphp" rel="bookmark" title="Here is Why You Should Be Avoiding Crowds Because of COVID19">
-              {!! $postrd->post_title  !!}
-            </a>
-          </h2>
-          <div class="ban__date">
-            <span>
-              <time class="ban__date" datetime="">{{$postrd->post_date }}</time>
-            </span>
+        </section>
+        @endif
+      </div>
+      <div class="carousel-item">
+        @php $ojb = App::getPostrandom();  @endphp
+        @if ($ojb)
+        @php
+           $postrd = $ojb->posts[0];
+            $cate = get_the_category($postrd->ID);
+        
+        @endphp
+        <section class="slider" style="background-image: url('{!!wp_get_attachment_url( get_post_thumbnail_id($postrd->ID), 'thumbnail' )!!}  ');height:600px ">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="banner__news ban">
+                  <div class="ban__info">
+                    <a href="{{ home_url("/category//") }}{!! $cate[0]->slug  !!}" class="ban__info-category">{{$cate[0]->name}} </a>
+                  </div>
+                  <h2 class="ban__title">
+                    <a href="{{ home_url('/') }}{{$postrd->post_name}}" rel="bookmark" title="Here is Why You Should Be Avoiding Crowds Because of COVID19">
+                      {!! $postrd->post_title  !!}
+                    </a>
+                  </h2>
+                  <div class="ban__date">
+                    <span>
+                      <time class="ban__date" datetime="">{{$postrd->post_date }}</time>
+                    </span>
+                  </div>
+                  <div class="ban__excerpt">
+                    {!! strip_tags(substr( $postrd->post_content,0,160 )) !!}...
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="ban__excerpt">
-            {!! strip_tags(substr( $postrd->post_content,0,160 )) !!}...
+        </section>
+        @endif
+      </div>
+      <div class="carousel-item">
+        @php $ojb = App::getPostrandom();  @endphp
+  @if ($ojb)
+  @php
+     $postrd = $ojb->posts[0];
+      $cate = get_the_category($postrd->ID);
+  @endphp
+  <section class="slider" style="background-image: url('{!!wp_get_attachment_url( get_post_thumbnail_id($postrd->ID), 'thumbnail' )!!}  ');height:600px ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="banner__news ban">
+            <div class="ban__info">
+              <a href="{{ home_url("/category//") }}{!! $cate[0]->slug  !!}" class="ban__info-category">{{$cate[0]->name}} </a>
+            </div>
+            <h2 class="ban__title">
+              <a href="{{ home_url('/') }}{{$postrd->post_name}}" rel="bookmark" title="Here is Why You Should Be Avoiding Crowds Because of COVID19">
+                {!! $postrd->post_title  !!}
+              </a>
+            </h2>
+            <div class="ban__date">
+              <span>
+                <time class="ban__date" datetime="">{{$postrd->post_date }}</time>
+              </span>
+            </div>
+            <div class="ban__excerpt">
+              {!! strip_tags(substr( $postrd->post_content,0,160 )) !!}...
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
+  @endif
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 </section>
-@endif
-
 <section class="sc-total">
   <div class="container">
     <div class="row">
@@ -88,7 +174,7 @@
           @php $loop->iteration; @endphp
           @if ($loop->iteration == 1)
             @include('post.p-40')
-          <div class="col-md-4">
+          <div class="col-md-4 animatable bounceIn">
             <div class="row">
           @else
             @include('post.p-20')
@@ -99,7 +185,7 @@
             </div>
           </div>
       @endif
-      <div class="col-md-3">
+      <div class="col-md-3 animatable bounceInRight">
         @php $post = App::getPostByCategory('6',5); @endphp
         @if($post)
           @foreach($post->get_posts() as $post)  @php
@@ -115,13 +201,15 @@
 </section>
 <section class="quick-read">
   <div class="container">
+    @php $cate = 3;  $post = App::getPostByCategory($cate,6); @endphp
     <h4 class="td-block-title">
       <span class="td-pulldown-size">
-        Quick Read
+        @php
+           echo( get_category($cate)->cat_name);
+        @endphp
       </span>
     </h4>
     <div class="row">
-      @php $post = App::getPostByCategory('3',6); @endphp
         @if($post)
           @foreach($post->get_posts() as $post)    
           @include('post.p-30')
@@ -138,15 +226,16 @@
       </span>
     </h4>
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 animatable bounceIn">
         @php dynamic_sidebar('sidebar-video') @endphp 
       </div>
     </div>
   </div>
+  
 </section>
 <section class="articles">
   <div class="container">
-    <h3 class="tdm-title tdm-title-sm">Latest Articles</h3>
+    <h3 class="tdm-title tdm-title-sm">Bài Mới </h3>
     <div class="row">
       <div class="col-md-9">
         <div class="row">
@@ -158,11 +247,11 @@
           @endif
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 animatable bounceInRight">
         <div class="articles__img">
           <a href="#">
             <span>
-              <img src="@php echo get_stylesheet_directory_uri() @endphp/images/maxresdefault_8201f8ac.jpg')"  class="img-fluid" alt="" title="">
+              <img src="@asset('images/maxresdefault.jpg')" width="250" height="140" class="img-fluid" alt="" title="" loading=lazy>
             </span>
           </a>
         </div>

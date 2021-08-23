@@ -2,7 +2,7 @@
 	<section id="mobile-header">
 		<nav class="navbar navbar-expand-lg navbar-light bg-white">
 			<a class="navbar-brand" href="{{ home_url('/') }}">
-				<img src="@asset('images/logo.jpg')" alt="Logo">
+				<img src="@asset('images/logo.jpg')" width="60" height="70" alt="Logo">
 				{{ get_bloginfo('name', 'display') }}
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
 		<nav id="desktop-navbar-main" class="navbar navbar-expand">
 			<div class="container">
 				<a class="navbar-brand" href="{{ home_url('/') }}">
-					<img src="@asset('images/logo.jpg')" alt="Logo">
+					<img src="@asset('images/logo.jpg')" width="60" height="60" alt="Logo">
 					{{ get_bloginfo('name', 'display') }}
 				</a>
 				@if (has_nav_menu('primary_navigation'))
@@ -44,12 +44,24 @@
 					]);
 					@endphp 
 				@endif
+				<!-- Button trigger modal -->
+				<i class="fas fa-search" data-toggle="modal" data-target="#exampleModal" style="font-size: 25px"></i>
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						{!! get_search_form(false) !!}
+						
+						</div>
+					</div>
+				</div>
+  </div>
 			</div>
 		</nav>
 		<nav id="desktop-navbar-bottom" class="navbar navbar-expand">
 			<div class="container">
 				<a class="navbar-brand" href="{{ home_url('/') }}">
-					<img src="@asset('images/logo.jpg')" alt="Logo">					
+					<img src="@asset('images/logo.jpg')" width="60" height="60" alt="Logo" >					
 						{{ get_bloginfo('name', 'display') }}			
 				</a>
 				@if (has_nav_menu('primary_navigation'))
@@ -66,6 +78,16 @@
 					]);
 					@endphp 
 				@endif
+				<i class="fas fa-search" data-toggle="modal" data-target="#exampleModal" style="font-size: 25px"></i>
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			{!! get_search_form(false) !!}
+			
+			</div>
+		</div>
+	</div>
 			</div>
 		</nav>
 	</section>

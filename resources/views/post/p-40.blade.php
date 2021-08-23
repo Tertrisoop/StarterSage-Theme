@@ -1,13 +1,13 @@
 @php
     $cat = get_the_category($post->ID);
 @endphp
-<div class="col-md-5">
+<div class="col-md-5 animatable bounceInLeft">
     <div class="news__paper">
         <a href="{{ home_url("/category//") }}{!! $cat[0]->slug  !!}" class="news__category">{{$cat[0]->name}} </a>
       <div class="news__paper-thumb">
         <a href="{{ home_url('/') }}{!! $post->post_name  !!}" rel="bookmark" title="{!! $post->post_title  !!}">
           <span class="entry-thumb" data-bg="">
-            <img src="{!!wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' )!!}" alt="">
+            <img src="{!!wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'large' )!!}" alt="" loading="lazy">
           </span>
         </a>
       </div>

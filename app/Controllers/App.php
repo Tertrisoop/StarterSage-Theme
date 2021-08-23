@@ -43,7 +43,6 @@ class App extends Controller
         $projects = new \Wp_Query($args);
         
         if ($projects->have_posts()) {
-
             return $projects;
         } else {
             return null;

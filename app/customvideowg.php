@@ -16,21 +16,35 @@ namespace App;
 
     function widget($args, $instance) {
         echo '<div class="fotorama">';
-        if ( !empty($instance['fb']) )
-            echo '<a href="'. $instance['fb'].'" data-img="desert-rose.jpg">
-            <img src="'. get_stylesheet_directory_uri() .'/dist/images/hero-bg_89fee3a1.jpg" alt="" title="">  </a>';
+        if ( !empty($instance['fb']) )  
+            $img = $this->getid($instance['fb']);
+            echo '<a href="'. $instance['fb'].'" >
+            <img src="https://i.ytimg.com/vi/'.$img .'/hq720.jpg" alt="" title="">  </a>';
         if ( !empty($instance['yt']) )
-            echo '<a href="'. $instance['yt'].'" data-img="desert-rose.jpg">
-            <img src="'. get_stylesheet_directory_uri() .'/dist/images/hero-bg_89fee3a1.jpg" alt="" title="">  </a>';
+            $img = $this->getid($instance['yt']);
+            echo '<a href="'. $instance['yt'].'" >
+            <img src="https://i.ytimg.com/vi/'.$img .'/hq720.jpg" alt="" title="">  </a>';
    
         if ( !empty($instance['tw']) )
-            echo '<a href="'. $instance['tw'].'" data-img="desert-rose.jpg">
-            <img src="'. get_stylesheet_directory_uri() .'/dist/images/hero-bg_89fee3a1.jpg" alt="" title="">  </a>';
+            $img = $this->getid($instance['tw']);   
+            echo '<a href="'. $instance['tw'].'" >
+            <img src="https://i.ytimg.com/vi/'.$img .'/hq720.jpg" alt="" title="">  </a>';
         
         echo    ' </div>';
     }
     
-    
+    public function getid( $var )
+    {
+        $cat = null ;
+        try {
+            $str = ((int) strpos($var,'=') ) + 1;
+            $cat = substr( $var  ,$str);
+        } catch (\Throwable $th) {
+            $cat = 'eshxgZVtZdA';
+        }
+       
+        return $cat;
+    }
    
     
     
@@ -42,25 +56,24 @@ namespace App;
     }
 
     function form( $instance ) {
-        $tw = isset( $instance['title'] ) ? $instance['title'] : '';
+        $tw = isset( $instance['tw'] ) ? $instance['tw'] : '';
         $fb = isset( $instance['fb'] ) ? $instance['fb'] : '';
         $yt = isset( $instance['yt'] ) ? $instance['yt'] : '';
-        $ig = isset( $instance['ig'] ) ? $instance['ig'] : '';
         ?>
        
         <p>
-            <label for="<?php echo $this->get_field_id('tw'); ?>"><?php echo 'Link video:' ?></label>
-            <input type="text" class="widefat" id="<?php echo $this->get_field_id('tw'); ?>" name="<?php echo $this->get_field_name('tw'); ?>" value="<?php echo $tw; ?>" />
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id('fb'); ?>"><?php echo 'Link video :' ?></label>
+            <label for="<?php echo $this->get_field_id('fb'); ?>"><?php echo 'Link video (Youtube only) :' ?></label>
             <input type="text" class="widefat" id="<?php echo $this->get_field_id('fb'); ?>" name="<?php echo $this->get_field_name('fb'); ?>" value="<?php echo $fb; ?>" />
               
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('yt'); ?>"><?php echo 'Link video :'?></label>
+            <label for="<?php echo $this->get_field_id('yt'); ?>"><?php echo 'Link video (Youtube only) :'?></label>
             <input type="text" class="widefat" id="<?php echo $this->get_field_id('yt'); ?>" name="<?php echo $this->get_field_name('yt'); ?>" value="<?php echo $yt; ?>" />
               
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id('tw'); ?>"><?php echo 'Link video (Youtube only):' ?></label>
+            <input type="text" class="widefat" id="<?php echo $this->get_field_id('tw'); ?>" name="<?php echo $this->get_field_name('tw'); ?>" value="<?php echo $tw; ?>" />
         </p>
         <?php
     }

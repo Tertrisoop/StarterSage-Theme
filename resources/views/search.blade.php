@@ -7,7 +7,7 @@
         <div class="block-inner">
           <div class="row">
           
-            <img class="banner-ad__img img-fluid" src="@php echo get_stylesheet_directory_uri() @endphp/assets/images/recl1.jpg" alt="" style="margin: 0 auto;
+            <img class="banner-ad__img img-fluid" src="@asset('images/recl1.jpg')" alt="" style="margin: 0 auto;
             margin-bottom: 20px;">
         </div>
         @include('partials.page-header')
@@ -18,11 +18,13 @@
         <div class="row">
           <div class="col-12 col-lg-9">
               <div class="row">
-                    @if (!have_posts())
-                  <div class="col-12 alert alert-warning">
-                    {{ __('Sorry, no results were found.', 'sage') }}
-                  </div>
-                  {!! get_search_form(false) !!}
+                <h1>Search</h1>
+                {!! get_search_form(false) !!}
+                @if (!have_posts())
+                <div class="col-12 alert alert-warning">
+                  {{-- {{ __('Sorry, no results were found.', 'sage') }} --}}
+                  @include('partials.404')
+                </div>
                 @endif
                 @while (have_posts()) @php the_post() @endphp
                   @include('post.p-25')

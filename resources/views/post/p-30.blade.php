@@ -1,11 +1,11 @@
 @php
     $cat = get_the_category($post->ID);
 @endphp
-<div class="col-12 col-md-6 col-lg-4 mb-5">
+<div class="col-12 col-md-6 col-lg-4 mb-5 quickread animatable fadeInUp">
     <div class="quick-read__thumb">
       <a href="{{ home_url('/') }}{!! $post->post_name  !!}" rel="bookmark" title="">
         <span>
-          <img src="{!!wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' )!!}" alt="G">
+          <img src="{!!wp_get_attachment_image_url( get_post_thumbnail_id($post->ID),'large' )!!}" alt="G" loading="lazy">
       </a>
     </div>
     <div class="quick-read__info">

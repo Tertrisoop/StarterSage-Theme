@@ -10,7 +10,8 @@
  * @see https://github.com/webpack-contrib/sass-loader#imports
  */
 // @import "~some-node-module";
-
+@import "layouts/mixins";
+@import "layouts/variables";
 /** Import theme styles */
 @import "common/global";
 @import "components/buttons";
@@ -18,10 +19,8 @@
 @import "components/forms";
 @import "components/wp-classes";
 @import "layouts/header";
-@import "layouts/sidebar";
 @import "layouts/footer";
 @import "layouts/pages";
-@import "layouts/posts";
 @import "layouts/tinymce";
 @import "layouts/main";
 @import "layouts/reset";

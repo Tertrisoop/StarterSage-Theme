@@ -1,4 +1,4 @@
-
+//animation
 .tdb-add-text {
     margin-bottom: 5px;
     @include category(14px,700,1);
@@ -65,6 +65,9 @@
         @include text(12px,900,1.2);
         > a{
             color: $colorblack;
+            &:hover{
+                color:$primarycolor;
+            }
         }
     }
     &__img{
